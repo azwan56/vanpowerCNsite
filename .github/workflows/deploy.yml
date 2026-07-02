@@ -1,0 +1,42 @@
+name: Deploy to Alibaba Cloud ECS
+
+on:
+  push:
+    branches:
+      - main  # 触发部署的分支，根据您的项目，这里设为 main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 拉取代码
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # 3. 安装依赖并打包静态资源
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build
+        env:
+          # 如果您的 Vite 在打包时需要注入 Gemini API 密钥，请在 GitHub 中配置此 Secret
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # 4. 使用 SSH 部署到阿里云 ECS
+      - name: Deploy to ECS via Rsync
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc --delete" # 增量同步，并删除服务器上多余的老文件
+          SOURCE: "dist/"            # Vite 打包生成的静态文件目录
+          REMOTE_HOST: ${{ secrets.ECS_HOST }}
+          REMOTE_USER: ${{ secrets.ECS_USER }}
+          TARGET: ${{ secrets.ECS_TARGET_DIR }} # 服务器上 Nginx 指向的网页根目录（例如 /var/www/vanpower）
