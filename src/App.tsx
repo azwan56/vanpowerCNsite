@@ -504,6 +504,11 @@ export default function App() {
             </div>
           </div>
           <p className="text-gray-500 text-sm">© 2026 万跑科技（上海）有限公司. 保留所有权利.</p>
+          <p className="mt-2 text-gray-600 text-xs hover:text-gray-400 transition-colors">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+              沪ICP备2026018807
+            </a>
+          </p>
         </div>
       </footer>
     </div>
