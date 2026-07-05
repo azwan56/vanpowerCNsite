@@ -153,6 +153,9 @@ export default function App() {
             <a href="#home" className="hover:text-blue-600 transition-colors">首页</a>
             <a href="#solutions" className="hover:text-blue-600 transition-colors">解决方案</a>
             <a href="#architecture" className="hover:text-blue-600 transition-colors">架构演示</a>
+            <a href="/swpost/" className="text-rose-600 hover:text-rose-700 font-bold transition-colors flex items-center">
+              <Sparkles className="w-4 h-4 mr-1 animate-pulse" /> 小红书生成器
+            </a>
             <a href="#about" className="hover:text-blue-600 transition-colors">关于我们</a>
             <a href="#contact" className="hover:text-blue-600 transition-colors">联系我们</a>
           </div>
@@ -453,6 +456,72 @@ export default function App() {
                   <CheckCircle2 className="w-4 h-4 text-green-500 mr-1" />
                   已通过高可用性与合规性验证
                 </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI 场景体验 */}
+        <section id="demos" className="py-24 bg-gray-50 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-4xl font-bold mb-4">AI 场景体验</h2>
+              <p className="text-gray-500 text-lg">
+                基于万跑科技自研多模态微调与阿里云/火山引擎底层算力打造的即开即用 AI 应用。
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden flex flex-col md:flex-row group hover:shadow-2xl transition-all duration-300">
+              <div className="md:w-1/2 bg-gradient-to-br from-rose-500 to-red-600 p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-white/10 blur-xl"></div>
+                <div>
+                  <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-semibold tracking-wider mb-6">
+                    ⚡ 热门体验
+                  </div>
+                  <h3 className="text-3xl font-extrabold mb-4 leading-tight">小红书智能拼图<br />海报生成器</h3>
+                  <p className="text-rose-50/90 text-sm leading-relaxed mb-6">
+                    集成了“防拉伸变形物理剪裁”、“AI 一键消除行人/路物”以及“火山引擎豆包 Seedream 5.0 吉卜力动漫化风格迁移”的社交媒体营销海报生产力工具。
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2 text-sm font-bold">
+                  <span>立即免费在线体验</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                </div>
+              </div>
+              
+              <div className="md:w-1/2 p-8 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm">物理防变形剪裁</h4>
+                      <p className="text-xs text-gray-500">基于目标拼图比例的高保真画幅自适应裁剪，照片绝不拉伸扭曲。</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm">AI 一键消除路人</h4>
+                      <p className="text-xs text-gray-500">涂抹即可无痕抹除废片里的杂物或行人，拯救废片。</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm">吉卜力动漫化 (豆包 5.0)</h4>
+                      <p className="text-xs text-gray-500">字节跳动 Seedream 5.0 风格重绘，生成宫崎骏工作室级别手绘大片。</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8 pt-6 border-t border-gray-100">
+                  <a 
+                    href="/swpost/" 
+                    className="block text-center w-full py-4 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-2xl transition duration-300 shadow-md"
+                  >
+                    🚀 打开生成器
+                  </a>
+                </div>
               </div>
             </div>
           </div>
