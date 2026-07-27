@@ -860,7 +860,7 @@ export default function App() {
       <footer id="contact" className="bg-gray-900 text-white py-20 transition-colors duration-500">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">开始您的 AI 转型旅程</h2>
-          <p className="text-gray-400 mb-10 max-w-lg mx-auto">
+          <p className="text-gray-400 mb-10 max-w-xl mx-auto [text-wrap:balance]">
             联系万跑技术专家，我们将为您评估最适合您的全球或本土 AI 落地架构。
           </p>
           <div className="inline-flex flex-col sm:flex-row justify-center items-center gap-6 bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-lg mb-16">
