@@ -319,6 +319,134 @@
       font-weight: 600;
       color: var(--text-main);
     }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Mobile & Tablet Responsive Optimization */
+    @media (max-width: 768px) {
+      body {
+        overflow: hidden;
+        height: 100dvh;
+      }
+
+      .slides-container {
+        height: calc(100dvh - 60px);
+      }
+
+      .slide {
+        width: 95%;
+        height: 88dvh;
+        padding: 20px 16px;
+        border-radius: 16px;
+      }
+
+      .slide-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+      }
+
+      .slide-title {
+        font-size: 1.25rem;
+        line-height: 1.35;
+      }
+
+      .slide-act {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+        border-radius: 10px;
+      }
+
+      .cover-title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+      }
+
+      .cover-subtitle {
+        font-size: 1rem;
+      }
+
+      .cover-slide p {
+        font-size: 0.9rem !important;
+      }
+
+      .badge-group {
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .badge {
+        padding: 4px 12px;
+        font-size: 0.8rem;
+      }
+
+      .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .card {
+        padding: 14px 16px;
+        border-radius: 12px;
+      }
+
+      .card-title {
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+      }
+
+      .card p, ul li, td, th {
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      ul li {
+        padding-left: 20px;
+        margin-bottom: 6px;
+      }
+
+      ul li::before {
+        font-size: 0.9rem;
+      }
+
+      table {
+        min-width: 480px;
+      }
+
+      th, td {
+        padding: 10px 12px;
+      }
+
+      .controls {
+        height: 60px;
+        padding: 0 16px;
+      }
+
+      .nav-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+      }
+
+      .counter {
+        font-size: 0.9rem;
+      }
+
+      .mermaid-box {
+        padding: 10px;
+        min-height: 240px;
+      }
+      
+      .mermaid svg {
+        max-height: 280px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -706,6 +834,34 @@ sequenceDiagram
         }
       }
     });
+
+    // Touch Swipe Gesture Support for Mobile Devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 40;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        if (currentIndex < slides.length - 1) {
+          currentIndex++;
+          updateSlides();
+        }
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlides();
+        }
+      }
+    }
 
     updateSlides();
   </script>

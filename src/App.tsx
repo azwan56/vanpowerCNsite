@@ -28,13 +28,15 @@ import {
   Terminal,
   Layers,
   ShieldCheck,
-  Sliders
+  Sliders,
+  Menu
 } from 'lucide-react';
 
 export default function App() {
   const [market, setMarket] = useState<'global' | 'domestic'>('global');
   const [scenario, setScenario] = useState<'knowledge' | 'workflow' | 'service'>('knowledge');
   const [showPresentationModal, setShowPresentationModal] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // 场景预览数据定义
   const scenarioData = {
@@ -161,6 +163,7 @@ export default function App() {
             <Sparkles className={`w-8 h-8 ${theme.text} animate-pulse`} />
             <div className="text-2xl font-bold tracking-wider text-gray-900">VANPOWER</div>
           </div>
+          {/* Desktop Nav */}
           <div className="hidden md:flex space-x-8 text-gray-600 font-medium">
             <a href="#home" className="hover:text-blue-600 transition-colors">首页</a>
             <a href="#solutions" className="hover:text-blue-600 transition-colors">解决方案</a>
@@ -172,7 +175,71 @@ export default function App() {
             <a href="#about" className="hover:text-blue-600 transition-colors">关于我们</a>
             <a href="#contact" className="hover:text-blue-600 transition-colors">联系我们</a>
           </div>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-xl text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </nav>
+
+        {/* Mobile Dropdown Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-lg border-b border-gray-100 px-6 py-4 space-y-3 font-medium text-gray-700 animate-in slide-in-from-top duration-200">
+            <a
+              href="#home"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 hover:text-blue-600 transition-colors"
+            >
+              首页
+            </a>
+            <a
+              href="#solutions"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 hover:text-blue-600 transition-colors"
+            >
+              解决方案
+            </a>
+            <a
+              href="#architecture"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 hover:text-blue-600 transition-colors"
+            >
+              架构演示
+            </a>
+            <a
+              href="#tech-stack"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 hover:text-blue-600 transition-colors"
+            >
+              技术架构 & SRE
+            </a>
+            <a
+              href="/swpost/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 text-rose-600 font-bold transition-colors flex items-center"
+            >
+              <Sparkles className="w-4 h-4 mr-1 animate-pulse" /> 小红书生成器
+            </a>
+            <a
+              href="#about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 hover:text-blue-600 transition-colors"
+            >
+              关于我们
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 hover:text-blue-600 transition-colors"
+            >
+              联系我们
+            </a>
+          </div>
+        )}
       </header>
 
       <main>
@@ -880,25 +947,26 @@ export default function App() {
 
       {/* 架构白皮书全屏演示 Modal */}
       {showPresentationModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 lg:p-8 animate-in fade-in duration-300">
-          <div className="bg-slate-900 w-full max-w-7xl h-[90vh] rounded-3xl overflow-hidden flex flex-col border border-slate-700 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-8 animate-in fade-in duration-300">
+          <div className="bg-slate-900 w-full max-w-7xl h-[95dvh] sm:h-[90vh] rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col border border-slate-700 shadow-2xl relative">
             {/* Modal Header */}
-            <div className="px-6 py-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <Presentation className="w-5 h-5 text-indigo-400" />
-                <h3 className="text-lg font-bold text-white">
+            <div className="px-3.5 sm:px-6 py-3 sm:py-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between gap-2">
+              <div className="flex items-center space-x-2 sm:space-x-3 min-w-0">
+                <Presentation className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-400 shrink-0" />
+                <h3 className="text-xs sm:text-base md:text-lg font-bold text-white truncate">
                   企业级 Agentic AI 落地架构与自愈闭环白皮书
                 </h3>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 shrink-0">
                 <a
                   href="/gems_architecture_presentation.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg border border-slate-700 flex items-center space-x-1.5 transition-colors"
+                  className="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg border border-slate-700 flex items-center space-x-1 transition-colors"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
-                  <span>全屏查看原页</span>
+                  <span className="hidden sm:inline">全屏查看原页</span>
+                  <span className="sm:hidden">原页</span>
                 </a>
                 <button
                   onClick={() => setShowPresentationModal(false)}
