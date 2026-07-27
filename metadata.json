@@ -1,6 +1,12 @@
 {
-  "name": "Vanpower Technology",
-  "description": "万跑科技 - 基于Google Gemini和Google Cloud的AI解决方案",
+  "name": "万跑科技 VANPOWER",
+  "description": "万跑科技 (VANPOWER) - 基于 Google Gemini 与通义千问 Qwen 的企业级 Agentic AI 落地架构与出海智算解决方案专家",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "Agentic AI",
+    "Google Gemini",
+    "GCP",
+    "Alibaba Cloud",
+    "Tongyi Qwen"
+  ]
 }

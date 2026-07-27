@@ -1,0 +1,22 @@
+# Robots.txt for www.vanpower.net
+
+User-agent: *
+Allow: /
+
+# Allow AI Search Engine Crawlers (Generative Engine Optimization - GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://www.vanpower.net/sitemap.xml
