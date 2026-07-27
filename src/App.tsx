@@ -17,12 +17,16 @@ import {
   Cpu, 
   Server, 
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  ExternalLink,
+  Presentation,
+  X
 } from 'lucide-react';
 
 export default function App() {
   const [market, setMarket] = useState<'global' | 'domestic'>('global');
   const [scenario, setScenario] = useState<'knowledge' | 'workflow' | 'service'>('knowledge');
+  const [showPresentationModal, setShowPresentationModal] = useState(false);
 
   // 场景预览数据定义
   const scenarioData = {
@@ -325,6 +329,61 @@ export default function App() {
                 </>
               )}
             </div>
+
+            {/* 深度白皮书与架构演示横幅 */}
+            <div className="mt-12 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden border border-indigo-500/20">
+              <div className="absolute -right-10 -bottom-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-8">
+                  <div className="inline-flex items-center space-x-2 px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-xs font-semibold mb-4 border border-indigo-500/30">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>旗舰落地白皮书 & 架构演示</span>
+                  </div>
+                  <h3 className="text-3xl font-extrabold mb-4 text-white tracking-tight">
+                    企业级 Agentic AI 落地架构与自愈闭环白皮书
+                  </h3>
+                  <p className="text-slate-300 text-base leading-relaxed mb-6">
+                    面向 AI 应用架构师的商业落地指南：包含大模型智能分工路由、Google ADK Harness 编排、六重 SRE 自愈 Loop (MAPE-K) 与三维 AI 安全防线。
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-3 text-sm text-slate-300">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Gemini / Qwen 多级模型智能路由</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Google ADK Harness & Pydantic 契约</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>六重 SRE MAPE-K 状态机自愈闭环</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>零 Key 云原生 IAM 鉴权与日志脱敏</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-center">
+                  <button
+                    onClick={() => setShowPresentationModal(true)}
+                    className="inline-flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white font-bold rounded-2xl transition duration-300 shadow-lg shadow-indigo-500/25 group cursor-pointer"
+                  >
+                    <Presentation className="w-5 h-5 mr-2.5 group-hover:scale-110 transition-transform" />
+                    <span>在线全屏演示 (Presentation)</span>
+                  </button>
+                  <a
+                    href="/gems_architecture_presentation.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl border border-white/20 backdrop-blur-md transition duration-300"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    <span>在新标签页打开</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -580,6 +639,48 @@ export default function App() {
           </p>
         </div>
       </footer>
+
+      {/* 架构白皮书全屏演示 Modal */}
+      {showPresentationModal && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 lg:p-8 animate-in fade-in duration-300">
+          <div className="bg-slate-900 w-full max-w-7xl h-[90vh] rounded-3xl overflow-hidden flex flex-col border border-slate-700 shadow-2xl relative">
+            {/* Modal Header */}
+            <div className="px-6 py-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <Presentation className="w-5 h-5 text-indigo-400" />
+                <h3 className="text-lg font-bold text-white">
+                  企业级 Agentic AI 落地架构与自愈闭环白皮书
+                </h3>
+              </div>
+              <div className="flex items-center space-x-3">
+                <a
+                  href="/gems_architecture_presentation.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg border border-slate-700 flex items-center space-x-1.5 transition-colors"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>全屏查看原页</span>
+                </a>
+                <button
+                  onClick={() => setShowPresentationModal(false)}
+                  className="p-1.5 text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+            {/* Modal Body: iframe */}
+            <div className="flex-1 w-full h-full bg-slate-950">
+              <iframe
+                src="/gems_architecture_presentation.html"
+                title="Gems Architecture Presentation Whitepaper"
+                className="w-full h-full border-0"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
