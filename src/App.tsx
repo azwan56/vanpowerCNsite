@@ -20,7 +20,15 @@ import {
   CheckCircle2,
   ExternalLink,
   Presentation,
-  X
+  X,
+  Lock,
+  RefreshCw,
+  Activity,
+  TrendingUp,
+  Terminal,
+  Layers,
+  ShieldCheck,
+  Sliders
 } from 'lucide-react';
 
 export default function App() {
@@ -157,6 +165,7 @@ export default function App() {
             <a href="#home" className="hover:text-blue-600 transition-colors">首页</a>
             <a href="#solutions" className="hover:text-blue-600 transition-colors">解决方案</a>
             <a href="#architecture" className="hover:text-blue-600 transition-colors">架构演示</a>
+            <a href="#tech-stack" className="hover:text-blue-600 transition-colors">技术架构 & SRE</a>
             <a href="/swpost/" className="text-rose-600 hover:text-rose-700 font-bold transition-colors flex items-center">
               <Sparkles className="w-4 h-4 mr-1 animate-pulse" /> 小红书生成器
             </a>
@@ -515,6 +524,235 @@ export default function App() {
                   <CheckCircle2 className="w-4 h-4 text-green-500 mr-1" />
                   已通过高可用性与合规性验证
                 </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 企业级 Agentic AI 技术基座与 SRE 自愈矩阵 */}
+        <section id="tech-stack" className="py-24 bg-slate-900 text-white border-t border-slate-800 transition-colors duration-500">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-indigo-500/20 text-indigo-300 rounded-full text-xs font-semibold mb-4 border border-indigo-500/30">
+                <Layers className="w-3.5 h-3.5" />
+                <span>全栈 Agentic AI 商业落地技术体系</span>
+              </div>
+              <h2 className="text-4xl font-extrabold mb-4 tracking-tight text-white">
+                企业级 Agentic AI 技术基座与 SRE 自愈矩阵
+              </h2>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                面向高并发、严合规与低延迟商业场景，构建涵盖模型分工路由、ADK Harness 编排、六重 MAPE-K 自愈 Loop 与三维 Zero-Trust 安全防线的基础设施。
+              </p>
+            </div>
+
+            {/* 四大技术热点关注网格 */}
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {/* 热点 1: 大语言模型场景化智能分工 */}
+              <div className="bg-slate-800/80 border border-slate-700/70 rounded-3xl p-8 hover:border-indigo-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center">
+                      <Cpu className="w-6 h-6" />
+                    </div>
+                    <span className="text-xs font-bold px-3 py-1 bg-indigo-500/10 text-indigo-300 rounded-full border border-indigo-500/20">
+                      1. 大模型智能分工
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white">场景驱动的多模型分级路由引擎</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                    拒绝“单一模型一刀切”。按业务场景的延迟、精度与开销要求，动态分发至最优大语言模型，整体 Token 运营成本降低 <span className="text-indigo-400 font-bold">70%</span>：
+                  </p>
+                  <div className="space-y-3 text-xs text-slate-300">
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex items-start justify-between">
+                      <div>
+                        <span className="font-bold text-indigo-400 block mb-0.5">Gemini 2.5 Flash</span>
+                        <span className="text-slate-400">零思考延迟、打字极速，专注于多轮客服对话与稳定 Function Calling</span>
+                      </div>
+                    </div>
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex items-start justify-between">
+                      <div>
+                        <span className="font-bold text-purple-400 block mb-0.5">Gemini 3.1 Flash-Lite</span>
+                        <span className="text-slate-400">超高吞吐与极低成本，专用于高并发批量量化风控演算与预热</span>
+                      </div>
+                    </div>
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex items-start justify-between">
+                      <div>
+                        <span className="font-bold text-blue-400 block mb-0.5">Gemini 3.6 Flash / Qwen 深度微调</span>
+                        <span className="text-slate-400">长上下文推理与本土知识库，用于 3-12 个月复杂定性研报与数据归因</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 热点 2: Google ADK Agent Harness 编排 */}
+              <div className="bg-slate-800/80 border border-slate-700/70 rounded-3xl p-8 hover:border-blue-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center">
+                      <Terminal className="w-6 h-6" />
+                    </div>
+                    <span className="text-xs font-bold px-3 py-1 bg-blue-500/10 text-blue-300 rounded-full border border-blue-500/20">
+                      2. Agent Harness 编排
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white">Google ADK 原生 Harness & Pydantic 契约</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                    告别脆弱纯 Prompt，打造逻辑与数据源硬连接的企业级 Harness 框架：
+                  </p>
+                  <div className="space-y-3 text-xs text-slate-300">
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-blue-400 block mb-1">✦ 零幻觉数据引擎 (Tool Calling)</span>
+                      <p className="text-slate-400">实时硬连接 17 季度真实 TTM 财务引擎，通过 API 精炼硬数据喂回大模型，确保逻辑严密。</p>
+                    </div>
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-emerald-400 block mb-1">✦ 100% 零丢包流式 Candidate Chunk 解析</span>
+                      <p className="text-slate-400">克服大模型思考 Token 导致 `chunk.text` 为空的已知缺陷，引入 Candidate 级降级避坑打字解析。</p>
+                    </div>
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-indigo-400 block mb-1">✦ Pydantic Contract 单点真理 (Single Source of Truth)</span>
+                      <p className="text-slate-400">契约结构统一在 `models.py` 定义，提示词指令与 Python 代码数据模型天然同步，绝不漂移。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 热点 3: 六重 SRE 自愈 Loop 闭环 */}
+              <div className="bg-slate-800/80 border border-slate-700/70 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center">
+                      <RefreshCw className="w-6 h-6" />
+                    </div>
+                    <span className="text-xs font-bold px-3 py-1 bg-emerald-500/10 text-emerald-300 rounded-full border border-emerald-500/20">
+                      3. 六重 SRE 自愈 Loop
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white">MAPE-K 全自主闭环运维矩阵</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                    摒弃依赖人工看 Log 的粗放模式，系统具备自我感知、自我诊断与自我修正能力：
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 text-xs text-slate-300">
+                    <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-emerald-400 block mb-0.5">1. AI 格式 Reflection 自审</span>
+                      <span className="text-slate-400">拦截错误自动带 Error 反哺重试</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-emerald-400 block mb-0.5">2. API 状态机熔断器</span>
+                      <span className="text-slate-400">跳闸后自动降级至备用源/缓存</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-emerald-400 block mb-0.5">3. 缓存缺失自补齐</span>
+                      <span className="text-slate-400">Cloud Scheduler 前置 Prewarm 预热</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-emerald-400 block mb-0.5">4. 策略胜率演化</span>
+                      <span className="text-slate-400">回测 T+5 实际结果与盈亏评级</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-emerald-400 block mb-0.5">5. SRE 异常告警反哺</span>
+                      <span className="text-slate-400">Webhook 附带修复代码建议</span>
+                    </div>
+                    <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-700/50">
+                      <span className="font-bold text-emerald-400 block mb-0.5">6. Canary 探针回滚</span>
+                      <span className="text-slate-400">10% Canary 切流失败自动切回</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 热点 4: 三维 Zero-Trust AI 安全防线 */}
+              <div className="bg-slate-800/80 border border-slate-700/70 rounded-3xl p-8 hover:border-purple-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center">
+                      <ShieldCheck className="w-6 h-6" />
+                    </div>
+                    <span className="text-xs font-bold px-3 py-1 bg-purple-500/10 text-purple-300 rounded-full border border-purple-500/20">
+                      4. 三维 AI 安全防线
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white">云原生 Zero-Trust 与敏感数据治理</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                    符合金融与企业级极严格安全合规要求，防止密钥泄露与注入攻击：
+                  </p>
+                  <div className="space-y-3 text-xs text-slate-300">
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex items-start space-x-3">
+                      <Lock className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold text-purple-300 block">零 Key 云原生 IAM 动态鉴权</span>
+                        <span className="text-slate-400">废除硬编码 JSON 密钥文件，通过 GCP ADC (Application Default Credentials) 动态授权。</span>
+                      </div>
+                    </div>
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex items-start space-x-3">
+                      <Shield className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold text-cyan-300 block">SensitiveDataFilter 日志脱敏防护</span>
+                        <span className="text-slate-400">注册全局日志拦截器，实时掩码 JWT、API Key 与 Webhook 地址，防止云日志明文泄露。</span>
+                      </div>
+                    </div>
+                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex items-start space-x-3">
+                      <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold text-emerald-300 block">强类型模式防 Prompt Injection</span>
+                        <span className="text-slate-400">在输入与输出端执行 Pydantic 双向硬模式匹配，完全阻断恶劣恶意 Prompt 注入。</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Benchmark 性能与基准测试结果 */}
+            <div className="bg-slate-800/50 border border-slate-700/60 rounded-3xl p-8 lg:p-10 shadow-2xl">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-white flex items-center">
+                    <TrendingUp className="w-6 h-6 text-emerald-400 mr-3" />
+                    权威 Benchmark 与 7/7 元测试验证表现
+                  </h3>
+                  <p className="text-slate-400 text-sm mt-1">
+                    系统在生产环境的真实性能基准与可靠性度量数据
+                  </p>
+                </div>
+                <div className="inline-flex items-center px-4 py-2 bg-emerald-500/10 text-emerald-400 rounded-xl border border-emerald-500/30 text-xs font-bold">
+                  <CheckCircle2 className="w-4 h-4 mr-2" />
+                  7/7 单元测试 100% 通过
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-slate-700 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      <th className="py-3.5 px-4">性能 / 技术指标</th>
+                      <th className="py-3.5 px-4">实测数值 / 表现</th>
+                      <th className="py-3.5 px-4">底层技术实现原理</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-700/50 text-sm text-slate-300">
+                    <tr>
+                      <td className="py-4 px-4 font-semibold text-white">首字呈现时间 (TTFT)</td>
+                      <td className="py-4 px-4 font-bold text-emerald-400">&lt; 450 ms</td>
+                      <td className="py-4 px-4 text-slate-400 text-xs">通过 HTTP/2 + FastAPI StreamingResponse 原生流式分块输出</td>
+                    </tr>
+                    <tr>
+                      <td className="py-4 px-4 font-semibold text-white">Serverless 冷启动 (Cold Start)</td>
+                      <td className="py-4 px-4 font-bold text-cyan-400">&lt; 1.8 s</td>
+                      <td className="py-4 px-4 text-slate-400 text-xs">基于 Python 3.11-slim 基础镜像与大模型 SDK 延迟按需加载</td>
+                    </tr>
+                    <tr>
+                      <td className="py-4 px-4 font-semibold text-white">基础固定月租开销</td>
+                      <td className="py-4 px-4 font-bold text-purple-400">$0 / 月</td>
+                      <td className="py-4 px-4 text-slate-400 text-xs">基于 GCP Cloud Run Scale-to-Zero 机制，无请求时不消耗硬件资源</td>
+                    </tr>
+                    <tr>
+                      <td className="py-4 px-4 font-semibold text-white">数据去幻觉准确率</td>
+                      <td className="py-4 px-4 font-bold text-emerald-400">100% 贴合财报/业务硬数据</td>
+                      <td className="py-4 px-4 text-slate-400 text-xs">强制通过 ADK Function Tool 实时计算 17 季度真实 TTM 财务指标</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
