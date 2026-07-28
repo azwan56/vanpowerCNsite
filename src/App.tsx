@@ -419,7 +419,7 @@ export default function App() {
                     企业级 Agentic AI 落地架构与自愈闭环白皮书
                   </h3>
                   <p className="text-slate-300 text-base leading-relaxed mb-6">
-                    面向 AI 应用架构师的商业落地指南：包含大模型智能分工路由、Google ADK Harness 编排、六重 SRE 自愈 Loop (MAPE-K) 与三维 AI 安全防线。
+                    面向 AI 应用架构师的商业落地指南 (11 大篇章演示)：包含大模型智能分工路由、Neo4j Graph RAG 产业链图谱、Google ADK Harness 编排、六重 SRE 自愈 Loop (MAPE-K) 与三维 AI 安全防线。
                   </p>
                   <div className="grid sm:grid-cols-2 gap-3 text-sm text-slate-300">
                     <div className="flex items-center space-x-2">
@@ -428,15 +428,15 @@ export default function App() {
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                      <span>Google ADK Harness & Pydantic 契约</span>
+                      <span>Neo4j Graph RAG 2-Hop 产业链图谱</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Google ADK Harness & 强制 OHLCV 看板</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                       <span>六重 SRE MAPE-K 状态机自愈闭环</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                      <span>零 Key 云原生 IAM 鉴权与日志脱敏</span>
                     </div>
                   </div>
                 </div>
@@ -663,22 +663,22 @@ export default function App() {
                       2. Agent Harness 编排
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-white">Google ADK 原生 Harness & Pydantic 契约</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-white">Neo4j Graph RAG & Google ADK Harness 编排</h3>
                   <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                    告别脆弱纯 Prompt，打造逻辑与数据源硬连接的企业级 Harness 框架：
+                    告别脆弱纯 Prompt，结合图数据库链条拓扑与硬数据工具调用：
                   </p>
                   <div className="space-y-3 text-xs text-slate-300">
                     <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50">
-                      <span className="font-bold text-blue-400 block mb-1">✦ 零幻觉数据引擎 (Tool Calling)</span>
-                      <p className="text-slate-400">实时硬连接 17 季度真实 TTM 财务引擎，通过 API 精炼硬数据喂回大模型，确保逻辑严密。</p>
+                      <span className="font-bold text-cyan-400 block mb-1">🌐 Neo4j Graph RAG (2-Hop 产业链拓扑)</span>
+                      <p className="text-slate-400">基于 `Neo4jGraphService` 自动执行 Cypher 2-Hop 供应链查询（如 NVDA ➔ TSM ➔ ASML），直接将复杂产业链网状关联注入 Chatbot。</p>
                     </div>
                     <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50">
-                      <span className="font-bold text-emerald-400 block mb-1">✦ 100% 零丢包流式 Candidate Chunk 解析</span>
-                      <p className="text-slate-400">克服大模型思考 Token 导致 `chunk.text` 为空的已知缺陷，引入 Candidate 级降级避坑打字解析。</p>
+                      <span className="font-bold text-indigo-400 block mb-1">📊 强制 OHLCV 技术看板 (拒绝模版套话)</span>
+                      <p className="text-slate-400">行情解答硬性要求优先输出开/高/低/收、成交量、VWAP、RSI(14)、SMA(20/50) 看板，强绑定真实盘口。</p>
                     </div>
                     <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50">
-                      <span className="font-bold text-indigo-400 block mb-1">✦ Pydantic Contract 单点真理 (Single Source of Truth)</span>
-                      <p className="text-slate-400">契约结构统一在 `models.py` 定义，提示词指令与 Python 代码数据模型天然同步，绝不漂移。</p>
+                      <span className="font-bold text-blue-400 block mb-1">✦ 零幻觉 Tool Calling 与 Candidate Chunk 流式解析</span>
+                      <p className="text-slate-400">硬连接 17 季度真实 TTM 财务引擎，通过 Pydantic 契约与 Candidate 级降级解决思考 Token 空包避坑。</p>
                     </div>
                   </div>
                 </div>

@@ -458,13 +458,13 @@
     <!-- Slide 1: 封面 -->
     <div class="slide cover-slide active">
       <div class="cover-subtitle">🚀 企业级 Agentic AI 应用架构白皮书</div>
-      <h1 class="cover-title">全栈云原生 AI 应用架构<br>与自主自愈 SRE 闭环体系</h1>
-      <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 900px; margin-top: 10px;">
-        面向 AI 应用架构师：模型分工路由 ➔ Google ADK Harness 编排 ➔ 六重 SRE 自愈 Loop ➔ 三维 AI 安全防线
+      <h1 class="cover-title">全栈云原生 AI 应用架构<br>与 Neo4j Graph RAG + SRE 闭环</h1>
+      <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 950px; margin-top: 10px;">
+        面向 AI 应用架构师：模型分工路由 ➔ Neo4j 图知识库 & ADK Harness ➔ 6重 SRE 自愈 Loop ➔ 三维 AI 安全防线
       </p>
       <div class="badge-group">
-        <span class="badge">1. 大模型选择 (Model Selection)</span>
-        <span class="badge">2. Agent Harness 架构</span>
+        <span class="badge">1. 大模型选择 (Model Routing)</span>
+        <span class="badge">2. Neo4j Graph RAG & ADK</span>
         <span class="badge">3. 6 重 Loop 自愈体系</span>
         <span class="badge">4. AI 安全与 Zero-Trust</span>
         <span class="badge">5. 跨领域通用落地</span>
@@ -488,7 +488,7 @@
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-indigo);">
           <div class="card-title" style="color: var(--accent-indigo);">3. Harness 编排空缺</div>
-          <p>缺少与真实数据源硬连接的 Tool Calling 架构，流式解析易发生 Token 丢包。</p>
+          <p>缺少图关联知识库 (Graph RAG) 与硬校验，答复容易沦为套话模板。</p>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-cyan);">
           <div class="card-title" style="color: var(--accent-cyan);">4. 运维黑盒 (Open Loop)</div>
@@ -558,10 +558,36 @@ sequenceDiagram
       </div>
     </div>
 
-    <!-- Slide 5: 流式解析与 Pydantic 契约单点真理 -->
+    <!-- Slide 5: Neo4j Graph RAG 与 Chatbot 强绑定 -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">4. 深度流式解析与 Pydantic 契约单点真理</div>
+        <div class="slide-title">4. Neo4j Graph RAG 图图谱与 Chatbot 强绑定</div>
+        <div class="slide-act">Part III: Graph RAG & Chatbot</div>
+      </div>
+      <div class="slide-body grid-2">
+        <div class="card">
+          <div class="card-title">🌐 Neo4j 2-Hop 产业链图谱拓扑</div>
+          <ul>
+            <li><b>服务连接</b>：<code>neo4j_service.py</code> 中的 <code>Neo4jGraphService</code>。</li>
+            <li><b>图拓扑提取</b>：自动进行 Cypher 图查询，提取 <code>2-hop</code> 供应链与上下游关联（例如 <code>NVDA ➔ SUPPLIED_BY ➔ TSM ➔ CUSTOMER_OF ➔ ASML</code>）。</li>
+            <li><b>Graph Context 注入</b>：将复杂的网状产业关系直接注入 Chatbot Prompt，大幅提升产业链联动推理能力。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title">📊 拒绝套话：强制 OHLCV 技术看板</div>
+          <ul>
+            <li><b>硬性约束 (Strict Rules)</b>：Chatbot 在解答个股行情（如“解释昨天 AAPL 的行情动因”）时，<b>强制优先输出开高低收 (OHLCV) 看板</b>。</li>
+            <li><b>全量指标罗列</b>：开盘价、最高价、最低价、收盘价、涨跌幅、成交量、10日均量、VWAP 以及 RSI(14)、SMA(20)、SMA(50)。</li>
+            <li><b>拒绝模版套话</b>：消除空洞词汇，强行绑定真实盘口与图谱关系。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: 流式解析与 Pydantic 契约单点真理 -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-title">5. 深度流式解析与 Pydantic 契约单点真理</div>
         <div class="slide-act">Part III: Harness 架构</div>
       </div>
       <div class="slide-body grid-2">
@@ -596,10 +622,10 @@ sequenceDiagram
       </div>
     </div>
 
-    <!-- Slide 6: 六重自主自愈 SRE 闭环矩阵 -->
+    <!-- Slide 7: 六重自主自愈 SRE 闭环矩阵 -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">5. 六重自主自愈 SRE 闭环矩阵 (MAPE-K)</div>
+        <div class="slide-title">6. 六重自主自愈 SRE 闭环矩阵 (MAPE-K)</div>
         <div class="slide-act">Part IV: Loop 架构</div>
       </div>
       <div class="slide-body grid-3">
@@ -630,10 +656,10 @@ sequenceDiagram
       </div>
     </div>
 
-    <!-- Slide 7: 自愈闭环拓扑流程 -->
+    <!-- Slide 8: 自愈闭环拓扑流程 -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">6. 状态机熔断与自愈闭环拓扑</div>
+        <div class="slide-title">7. 状态机熔断与自愈闭环拓扑</div>
         <div class="slide-act">Part IV: Loop 架构</div>
       </div>
       <div class="slide-body">
@@ -668,10 +694,10 @@ sequenceDiagram
       </div>
     </div>
 
-    <!-- Slide 8: 三维 AI 安全防线 -->
+    <!-- Slide 9: 三维 AI 安全防线 -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">7. 三维一体 AI 安全与云原生防线</div>
+        <div class="slide-title">8. 三维一体 AI 安全与云原生防线</div>
         <div class="slide-act">Part V: AI 安全</div>
       </div>
       <div class="slide-body grid-3">
@@ -679,7 +705,7 @@ sequenceDiagram
           <div class="card-title" style="color: var(--accent-green);">🔑 零 Key 云原生鉴权</div>
           <ul>
             <li>废除写死 JSON 秘钥文件的做法。</li>
-            <li>基于 GCP Application Default Credentials (ADC) + IAM Service Account 动态授权。</li>
+            <li>基于 GCP Application Default Credentials (ADC) + IAM 动态授权。</li>
             <li>零凭证泄露隐患，符合金融级合规。</li>
           </ul>
         </div>
@@ -702,10 +728,10 @@ sequenceDiagram
       </div>
     </div>
 
-    <!-- Slide 9: 权威 Benchmark 评估 -->
+    <!-- Slide 10: 权威 Benchmark 评估 -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">8. 权威 Benchmark 与 7/7 元测试验证</div>
+        <div class="slide-title">9. 权威 Benchmark 与 7/7 元测试验证</div>
         <div class="slide-act">Part VI: 落地与验证</div>
       </div>
       <div class="slide-body">
@@ -748,26 +774,26 @@ sequenceDiagram
       </div>
     </div>
 
-    <!-- Slide 10: 通用跨领域扩展路线 -->
+    <!-- Slide 11: 通用跨领域扩展路线 -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">9. 通用 AI Agent 框架跨领域复制指南</div>
+        <div class="slide-title">10. 通用 AI Agent 框架跨领域复制指南</div>
         <div class="slide-act">Part VI: 跨领域扩展</div>
       </div>
       <div class="slide-body grid-2">
         <div class="card">
           <div class="card-title">🌐 领域迁移范式 (Universal Domain Adaptation)</div>
           <ul>
-            <li><b>金融科技 (FinTech)</b>：实时行情、量化因子、持仓风控（当前已落地）。</li>
-            <li><b>医疗健康 (MedTech)</b>：电子病历诊断、药效数据库匹配、AI 处方自审。</li>
-            <li><b>法律合规 (LegalTech)</b>：法条检索、合同审查、条款自纠错 Reflection。</li>
-            <li><b>企业级 RAG (Enterprise Search)</b>：知识库检索引导、多模态智能客服。</li>
+            <li><b>金融科技 (FinTech)</b>：Neo4j 产业链图谱、OHLCV 技术看板、持仓风控（当前已落地）。</li>
+            <li><b>医疗健康 (MedTech)</b>：疾病-药物 Graph RAG 图谱、电子病历硬指标提取、AI 处方自审。</li>
+            <li><b>法律合规 (LegalTech)</b>：法例关联图谱、合同条款硬性对比、条款自纠错 Reflection。</li>
+            <li><b>企业级 RAG (Enterprise Search)</b>：企业组织架构图谱、知识库检索引导、多模态智能客服。</li>
           </ul>
         </div>
         <div class="card">
           <div class="card-title">🚀 总结与未来演进</div>
           <ul>
-            <li><b>一套架构，无限复用</b>：Harness + Loop + Security 构成通用企业级 AI 基座。</li>
+            <li><b>一套架构，无限复用</b>：Graph RAG + Harness + Loop + Security 构成通用企业级 AI 基座。</li>
             <li><b>Cloud Tasks 异步队列</b>：处理大规模并发推演。</li>
             <li><b>Firebase Data Connect (PostgreSQL)</b>：扩展高频交易与因子数据库。</li>
           </ul>
@@ -779,7 +805,7 @@ sequenceDiagram
 
   <div class="controls">
     <button class="nav-btn" id="prev-btn">← 上一页</button>
-    <div class="counter" id="slide-counter">1 / 10</div>
+    <div class="counter" id="slide-counter">1 / 11</div>
     <button class="nav-btn" id="next-btn">下一页 →</button>
   </div>
 
