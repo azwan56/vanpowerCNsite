@@ -160,7 +160,7 @@ export default function App() {
       <header className="sticky top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 transition-all">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#home" className="flex items-center space-x-3 group">
-            <img src="/logo.png" alt="VANPOWER Logo" className="w-8 h-8 rounded-lg object-contain group-hover:scale-105 transition-transform" />
+            <img src="/vanpower-logo.png" alt="VANPOWER Logo" className="w-9 h-9 rounded-xl object-contain shadow-sm border border-gray-100 bg-white p-0.5 group-hover:scale-105 transition-transform" />
             <div className="text-2xl font-bold tracking-wider text-gray-900">VANPOWER</div>
           </a>
           {/* Desktop Nav */}
