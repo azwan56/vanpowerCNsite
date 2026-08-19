@@ -931,9 +931,9 @@ export default function App() {
             联系万跑技术专家，我们将为您评估最适合您的全球或本土 AI 落地架构。
           </p>
           <div className="inline-flex flex-col sm:flex-row justify-center items-center gap-6 bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-lg mb-16">
-            <a href="mailto:azwan@vanpower.net" className="flex items-center space-x-3 hover:text-blue-400 transition-colors">
+            <a href="mailto:general@vanpower.net" className="flex items-center space-x-3 hover:text-blue-400 transition-colors">
               <Mail className="w-6 h-6 text-blue-400" />
-              <span>azwan@vanpower.net</span>
+              <span>general@vanpower.net</span>
             </a>
           </div>
           <p className="text-gray-500 text-sm">© 2026 万跑科技（上海）有限公司. 保留所有权利.</p>
