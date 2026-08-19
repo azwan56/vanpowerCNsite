@@ -159,10 +159,10 @@ export default function App() {
       {/* 头部导航栏 */}
       <header className="sticky top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 transition-all">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <Sparkles className={`w-8 h-8 ${theme.text} animate-pulse`} />
+          <a href="#home" className="flex items-center space-x-3 group">
+            <img src="/logo.png" alt="VANPOWER Logo" className="w-8 h-8 rounded-lg object-contain group-hover:scale-105 transition-transform" />
             <div className="text-2xl font-bold tracking-wider text-gray-900">VANPOWER</div>
-          </div>
+          </a>
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-8 text-gray-600 font-medium">
             <a href="#home" className="hover:text-blue-600 transition-colors">首页</a>
