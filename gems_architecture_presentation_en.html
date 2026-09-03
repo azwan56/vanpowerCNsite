@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>企业级 Agentic AI 生产落地架构与自愈闭环白皮书 - DailyStock & Gems</title>
+  <title>Enterprise Agentic AI Production Architecture White Paper - DailyStock & Gems</title>
   <!-- Mermaid.js for interactive diagrams -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <style>
@@ -454,312 +454,312 @@
   <div id="progress-bar"></div>
 
   <div class="lang-switch">
-    <a href="gems_architecture_presentation.html" class="lang-btn active">中文</a>
-    <a href="gems_architecture_presentation_en.html" class="lang-btn">English</a>
+    <a href="gems_architecture_presentation.html" class="lang-btn">中文</a>
+    <a href="gems_architecture_presentation_en.html" class="lang-btn active">English</a>
   </div>
 
   <div class="slides-container">
 
-    <!-- Slide 1: 封面 -->
+    <!-- Slide 1: Cover -->
     <div class="slide cover-slide active">
-      <div class="cover-subtitle">🚀 企业级 Agentic AI 生产落地架构白皮书</div>
-      <h1 class="cover-title">云原生全栈 Agentic AI 落地架构<br>Neo4j Graph RAG + 零信任 RBAC + SRE 自愈闭环</h1>
+      <div class="cover-subtitle">🚀 Enterprise Agentic AI Production Architecture White Paper</div>
+      <h1 class="cover-title">Full-Stack Cloud-Native AI Architecture<br>with Neo4j Graph RAG, Zero-Trust RBAC & SRE Loops</h1>
       <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 950px; margin-top: 5px;">
-        面向 AI 应用架构师：定向上下文路由 ➔ Neo4j 知识图谱与 ADK 编排 ➔ 多租户隔离与防泄露 ➔ 七重自愈 SRE 闭环
+        Production Deep Dive: Targeted Context Routing ➔ Neo4j Graph RAG & ADK Harness ➔ Multi-Tenant RBAC & Privacy Defense ➔ 7-Fold Autonomous SRE Closed Loop
       </p>
       <div class="badge-group">
-        <span class="badge">1. 定向上下文路由</span>
-        <span class="badge">2. Neo4j Graph RAG 与 ADK</span>
-        <span class="badge">3. 零信任 RBAC 与隐私防泄露</span>
-        <span class="badge">4. 多源数据严谨性治理</span>
-        <span class="badge">5. 七重自愈 SRE 闭环</span>
+        <span class="badge">1. Targeted Context Routing</span>
+        <span class="badge">2. Neo4j Graph RAG & ADK</span>
+        <span class="badge">3. Zero-Trust RBAC & Privacy</span>
+        <span class="badge">4. Multi-Source Data Rigor</span>
+        <span class="badge">5. 7-Fold SRE Self-Healing</span>
       </div>
     </div>
 
-    <!-- Slide 2: 痛点与挑战 -->
+    <!-- Slide 2: Pain Points & Challenges -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">1. 企业级 AI 落地四大命门与挑战</div>
-        <div class="slide-act">Part I: 痛点与挑战</div>
+        <div class="slide-title">1. Four Critical Bottlenecks of Enterprise AI Adoption</div>
+        <div class="slide-act">Part I: Pain Points & Challenges</div>
       </div>
       <div class="slide-body grid-4">
         <div class="card" style="border-top: 4px solid var(--accent-red);">
-          <div class="card-title" style="color: var(--accent-red);">1. 严重幻觉陷阱</div>
-          <p>脱离真实数据的纯 Prompt 提示词极易引发指标伪造与数字幻觉，在金融、医疗、法律领域造成致命合规风险。</p>
+          <div class="card-title" style="color: var(--accent-red);">1. Hallucination Trap</div>
+          <p>Pure prompting causes LLMs to fabricate metrics and prices. Missing hard citations creates fatal legal and compliance risks.</p>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-purple);">
-          <div class="card-title" style="color: var(--accent-purple);">2. Token 爆炸与高延迟</div>
-          <p>缺乏场景路由，将用户所有持仓股票全量塞入 Prompt 动辄消耗 30k+ Token，导致响应延迟高达 12 秒且成本飙升。</p>
+          <div class="card-title" style="color: var(--accent-purple);">2. Token Bloat & Latency</div>
+          <p>Feeding all user stocks (20+ tickers) into a single prompt consumes 30k+ tokens, causing 12s+ latency and token waste.</p>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-indigo);">
-          <div class="card-title" style="color: var(--accent-indigo);">3. 多租户数据泄漏风险</div>
-          <p>若缺乏数据库物理规则约束与敏感凭证脱敏，用户的持仓、交易记录、Webhook 密钥易发生跨租户越权泄露。</p>
+          <div class="card-title" style="color: var(--accent-indigo);">3. Multi-Tenant Leakage</div>
+          <p>Without database security rules and token masking, portfolios, webhooks, and private chat histories risk cross-user leakage.</p>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-cyan);">
-          <div class="card-title" style="color: var(--accent-cyan);">4. 外部噪音与虚假传闻</div>
-          <p>未经清洗将社交平台（Reddit/X）谣言与官方定量指标混杂，严重损害投研严谨性并导致错误交易指令。</p>
+          <div class="card-title" style="color: var(--accent-cyan);">4. Data Disparity & Rumors</div>
+          <p>Mixing unverified Reddit/X rumors with quantitative feeds without sanitization ruins research rigor and triggers false trades.</p>
         </div>
       </div>
     </div>
 
-    <!-- Slide 3: 场景驱动模型分工与定向路由 -->
+    <!-- Slide 3: Model Choice & Targeted Routing -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">2. 场景驱动的大模型分工与定向路由策略</div>
-        <div class="slide-act">Part II: 模型分工与路由</div>
+        <div class="slide-title">2. Scenario-Driven LLM Division of Labor & Targeted Routing</div>
+        <div class="slide-act">Part II: Model Selection</div>
       </div>
       <div class="slide-body grid-3">
         <div class="card" style="border-top: 4px solid var(--accent-cyan);">
           <div class="card-title">Gemini 2.5 Flash</div>
-          <p><b>多轮对话、ADK 工具调用与定向上下文路由</b></p>
+          <p><b>Multi-Turn Chat, ADK Tools & Targeted Routing</b></p>
           <ul>
-            <li><b>定向路由</b>：自动识别用户询问标的（如 <code>NVDA</code>），精准剪枝其余 18 只股票，Token 消耗骤降 <b>>80%</b>（2.8万 ➔ 2500 Token），延迟降至 1.8 秒。</li>
-            <li><b>应用场景</b>：实时 AI 选股问答、盘前执行简报、盘后复盘快讯。</li>
+            <li><b>Targeted Routing</b>: Identifies asked symbol (e.g. <code>NVDA</code>) and prunes other 18 stocks, slashing tokens by <b>>80%</b> (28k ➔ 2.5k) and latency to 1.8s.</li>
+            <li><b>Use Cases</b>: Real-time stock assistant, pre-market briefings, instant interactive dashboard Q&A.</li>
           </ul>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-purple);">
           <div class="card-title">Gemini 2.5 Flash-Lite</div>
-          <p><b>高并发量化风险拟合</b></p>
+          <p><b>High-Concurrency Quant Risk Fitting</b></p>
           <ul>
-            <li><b>优势</b>：成本骤降 70%，极高并发吞吐耐受度，适于批量高频计算。</li>
-            <li><b>应用场景</b>：组合压力测试、板块暴露计算、定时任务缓存预热。</li>
+            <li><b>Advantage</b>: Ultra-low cost and throughput optimization (70% cost reduction), high concurrency tolerance.</li>
+            <li><b>Use Cases</b>: Batch portfolio stress testing, sector exposure calculation, scheduled prewarming.</li>
           </ul>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-indigo);">
           <div class="card-title">Gemini 2.5 Pro</div>
-          <p><b>机构级深度定性推演</b></p>
+          <p><b>Institutional-Grade Qualitative Research</b></p>
           <ul>
-            <li><b>优势</b>：超长上下文与多因子因果推理能力，支持解构多财季财报与电话会。</li>
-            <li><b>应用场景</b>：宏观催化动因归因、美联储决议深度研报、估值建模。</li>
+            <li><b>Advantage</b>: Deep reasoning capable of multi-factor 10-K/10-Q filing decomposition and earnings calls.</li>
+            <li><b>Use Cases</b>: Macro event attribution, Fed policy deep dives, multi-quarter valuation modeling.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Slide 4: Google ADK Harness 编排 -->
+    <!-- Slide 4: Google ADK Agent Harness Orchestration -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">3. Google ADK 原生 Agent Harness 编排</div>
-        <div class="slide-act">Part III: Harness 架构</div>
+        <div class="slide-title">3. Native Google ADK Agent Harness Orchestration</div>
+        <div class="slide-act">Part III: Harness Architecture</div>
       </div>
       <div class="slide-body">
         <div class="mermaid-box">
-          <div class="mermaid-zoom-hint">🔍 点击放大查看</div>
+          <div class="mermaid-zoom-hint">🔍 Click to Expand</div>
           <pre class="mermaid">
 sequenceDiagram
-    actor User as 用户 (投资提问)
+    actor User as User (Business Query)
     participant ADK as Google ADK Agent Harness
-    participant Gemini as Gemini 2.5 Flash 模型
-    participant Engine as [ADK Tool] 17财季 TTM 引擎
+    participant Gemini as Gemini 2.5 Flash Model
+    participant Engine as [ADK Tool] 17-Quarter TTM Engine
 
-    User->>ADK: "PATH 近年历史 P/E 估值区间如何？"
-    ADK->>Gemini: 注入业务 Prompt 与注册工具集
-    Gemini->>ADK: 触发 Tool Call: get_stock_historical_valuations('PATH')
-    ADK->>Engine: 驱动数据精炼引擎，提取连续 17 财季真实 TTM 财务指标
-    Engine-->>ADK: 返回真实市盈率 18.5x、市净率 3.2x、自由现金流收益率 6.51%
-    ADK->>Gemini: 将可信事实数据回填至模型上下文
-    Gemini-->>User: 输出无幻觉、严谨严密的事实解答
+    User->>ADK: "What is PATH's historical P/E valuation range over recent years?"
+    ADK->>Gemini: Inject Prompt & Registered Tools
+    Gemini->>ADK: Trigger Tool Call: get_stock_historical_valuations('PATH')
+    ADK->>Engine: Run data refinery engine, extract 17-quarter real TTM financial data
+    Engine-->>ADK: Return P/E 18.5x, P/B 3.2x, FCF Yield 6.51%
+    ADK->>Gemini: Feed authentic Tool Response back to model
+    Gemini-->>User: Output hallucination-free, rigorous structured answer
           </pre>
         </div>
       </div>
     </div>
 
-    <!-- Slide 5: Neo4j Graph RAG 与 Chatbot 强绑定 -->
+    <!-- Slide 5: Neo4j Graph RAG & Chatbot Integration -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">4. Neo4j Graph RAG 图谱与技术看板硬绑定</div>
-        <div class="slide-act">Part III: Graph RAG & 看板</div>
+        <div class="slide-title">4. Neo4j Graph RAG Topology & Tight Chatbot Binding</div>
+        <div class="slide-act">Part III: Graph RAG & Chatbot</div>
       </div>
       <div class="slide-body grid-2">
         <div class="card">
-          <div class="card-title">🌐 Neo4j 2-Hop 产业链图谱关联</div>
+          <div class="card-title">🌐 Neo4j 2-Hop Supply Chain Graph Topology</div>
           <ul>
-            <li><b>服务集成</b>：封装于 <code>neo4j_service.py</code> 中的 <code>Neo4jGraphService</code>。</li>
-            <li><b>图拓扑提取</b>：自动执行 Cypher 检索 <code>2-hop</code> 产业链上下游与客户依赖（如 <code>NVDA ➔ 供应商 ➔ TSM ➔ 客户 ➔ ASML</code>）。</li>
-            <li><b>图上下文注入</b>：直接将产业链网状拓扑注入 Prompt，大幅强化行业传导推理。</li>
+            <li><b>Service Integration</b>: <code>Neo4jGraphService</code> inside <code>neo4j_service.py</code>.</li>
+            <li><b>Graph Topology Extraction</b>: Cypher queries extract <code>2-hop</code> supply chain & customer relations (e.g., <code>NVDA ➔ SUPPLIED_BY ➔ TSM ➔ CUSTOMER_OF ➔ ASML</code>).</li>
+            <li><b>Graph Context Injection</b>: Injects complex industrial dependencies into Chatbot Prompt to enhance supply-chain reasoning.</li>
           </ul>
         </div>
         <div class="card">
-          <div class="card-title">📊 拒绝套话：强制输出 OHLCV 量化技术看板</div>
+          <div class="card-title">📊 Reject Boilerplate: Mandatory OHLCV Technical Dashboard</div>
           <ul>
-            <li><b>硬性约束</b>：在解答个股行情时，强制优先列出完整量化技术看板。</li>
-            <li><b>指标明细</b>：开高低收、涨跌幅、成交量、10日均量、VWAP、RSI(14)、SMA(20/50)。</li>
-            <li><b>严格事实锚定</b>：缺漏指标回答“暂无官方最新披露数据”，彻底杜绝主观捏造。</li>
+            <li><b>Strict Rules</b>: Chatbot is <b>forced to output real OHLCV data</b> before providing narrative analysis.</li>
+            <li><b>Full Metric Listing</b>: Open, High, Low, Close, % Change, Volume, 10-day Avg Vol, VWAP, RSI(14), SMA(20), SMA(50).</li>
+            <li><b>Anti-Hallucination Grounding</b>: Missing metrics are stated as "No official data disclosed" rather than fabricated.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Slide 6: 多租户 RBAC 与隐私防泄露体系 -->
+    <!-- Slide 6: Multi-Tenant RBAC & Privacy Defense -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">5. 多租户分级权限 (RBAC) 与数据隐私安全隔离</div>
-        <div class="slide-act">Part IV: 权限与隐私安全</div>
+        <div class="slide-title">5. Multi-Tenant RBAC & Zero-Trust Privacy Defense</div>
+        <div class="slide-act">Part IV: Multi-Tenant & Security</div>
       </div>
       <div class="slide-body grid-2">
         <div class="card">
-          <div class="card-title">🛡️ Firestore 规则层物理隔离 (firestore.rules)</div>
+          <div class="card-title">🛡️ Cryptographic Firestore Isolation (firestore.rules)</div>
           <ul>
-            <li><b>数据库物理防护</b>：部署规则强制限制 <code>request.auth.uid == userId</code>，客户端 SDK 只能读写自己的文档。</li>
-            <li><b>杜绝前端传参 UID</b>：后台所有操作严格从 Google 签名的 Firebase ID Token 中解密身份，杜绝越权扫描。</li>
-            <li><b>共享数据只读防护</b>：公共股票池与宏观缓存仅允许已认证用户只读，写入仅限云端 Admin SDK。</li>
+            <li><b>Strict Rule Enforcement</b>: Direct client SDK access is restricted to <code>request.auth.uid == userId</code>.</li>
+            <li><b>No Client User ID Parameter</b>: Backend extracts <code>uid</code> strictly from Google-signed JWT Bearer tokens; passing arbitrary <code>user_id</code> in body/query is rejected.</li>
+            <li><b>Shared Read-Only Caches</b>: <code>stock_pools</code> and <code>macro_cache</code> allow authenticated reads, but require Admin SDK writes.</li>
           </ul>
         </div>
         <div class="card">
-          <div class="card-title">🔑 敏感 Webhook 令牌单向脱敏</div>
+          <div class="card-title">🔑 Dynamic Webhook Secret Masking</div>
           <ul>
-            <li><b>动态脱敏显示</b>：企业微信（<code>key=36a2****6987</code>）与 Discord（<code>.../f0C3****q6tk</code>）密钥返回前端时自动打码。</li>
-            <li><b>非破坏性保存</b>：用户提交包含 <code>****</code> 的表单时，后台智能保留原真实私钥，防止密钥丢失或被截获。</li>
-            <li><b>多等级权益配额</b>：Free (1持仓)、Trial (5持仓, 2观察)、Paid/Pro (15持仓, 15天宽限期)、Super/Admin (无限制)。</li>
+            <li><b>One-Way Masking</b>: WeChat Work (<code>key=36a2****6987</code>) and Discord (<code>.../f0C3****q6tk</code>) are masked in responses to prevent token exposure.</li>
+            <li><b>Non-Destructive Updates</b>: When updating settings with masked inputs (containing <code>****</code>), backend preserves existing stored credentials.</li>
+            <li><b>Tier Matrix Quotas</b>: Free (1 holding), Trial (5 holdings, 2 observe), Paid/Pro (15 holdings, 5 observe, 15-day grace period), Super/Admin (unlimited).</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Slide 7: 外部多源数据严谨性治理流水线 -->
+    <!-- Slide 7: Multi-Source External Data Rigor Pipeline -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">6. 外部多源数据获取、校准与严谨性治理流水线</div>
-        <div class="slide-act">Part IV: 数据工程治理</div>
+        <div class="slide-title">6. Multi-Source External Data Rigor & Sanitization Pipeline</div>
+        <div class="slide-act">Part IV: Data Engineering</div>
       </div>
       <div class="slide-body grid-3">
         <div class="card" style="border-top: 4px solid var(--accent-cyan);">
-          <div class="card-title">FMP & yfinance 黄金定量源</div>
+          <div class="card-title">FMP & yfinance Golden Source</div>
           <ul>
-            <li><b>FMP 核心基座</b>：实时行情、VWAP、均线、RSI、13F 机构持仓、内幕交易、SEC 电话会。</li>
-            <li><b>有效性强校验</b>：拦截 $P \le 0$ 与极端越界数据，校验 $RSI \in [0, 100]$，1 分钟内存 TTL。</li>
-            <li><b>yfinance 保底</b>：大盘 ETF 连续行情与 FMP 超限时的自动熔断切换。</li>
+            <li><b>FMP Primary</b>: Quotes, VWAP, technical indicators, 13F institutional ownership, insider trades, SEC transcripts.</li>
+            <li><b>Sanitization</b>: Validates $P > 0$, $RSI \in [0, 100]$, and discards corrupted or stale data.</li>
+            <li><b>yfinance Fallback</b>: Smooth circuit breaker fallback for macro ETF continuity.</li>
           </ul>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-indigo);">
-          <div class="card-title">FRED 圣路易斯联储官方源</div>
+          <div class="card-title">FRED Official Federal Reserve</div>
           <ul>
-            <li><b>9 大核心宏观指标</b>：10Y-2Y 倒挂利差 (<code>T10Y2Y</code>)、美债收益率、联邦基金利率 (<code>FEDFUNDS</code>)、核心 PCE、CPI、非农就业、失业率、密歇根消费者信心。</li>
-            <li><b>严谨清洗</b>：过滤休市空值符 <code>.</code>，绑定官方发布日期与 15 分钟缓存。</li>
+            <li><b>9 Core Series</b>: 10Y-2Y Spread (<code>T10Y2Y</code>), 10Y/2Y Yields, Fed Funds (<code>FEDFUNDS</code>), Core PCE, CPI, Nonfarm Payrolls, Unemployment Rate, Consumer Sentiment.</li>
+            <li><b>Sanitization</b>: Filters missing <code>.</code> markers; attaches official release dates with 15-min TTL cache.</li>
           </ul>
         </div>
         <div class="card" style="border-top: 4px solid var(--accent-purple);">
-          <div class="card-title">权威媒体与传闻嗅探</div>
+          <div class="card-title">Media & Social Rumor Filter</div>
           <ul>
-            <li><b>主流财经媒体优先</b>：定向白名单抓取 Bloomberg、Reuters、WSJ、CNBC、Seeking Alpha 深度研评。</li>
-            <li><b>社交情绪分流</b>：独立隔离 Reddit WSB 与 X 散户情绪。</li>
-            <li><b>谣言强警告标识</b>：自动为未经证实的传闻添加 <code>⚠️ [社交舆情/未经证实消息]</code> 警示。</li>
+            <li><b>Tier-1 Media</b>: Domain priority filtering for Bloomberg, Reuters, WSJ, CNBC, Seeking Alpha.</li>
+            <li><b>Social Pulse</b>: Demarcates Reddit WSB & X chatter.</li>
+            <li><b>Rumor Warning Badge</b>: Automatically prepends <code>⚠️ [Unverified Social Rumor]</code> to prevent misinformation.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Slide 8: 七重自主自愈 SRE 闭环 -->
+    <!-- Slide 8: Seven SRE Closed Loops -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">7. 七重自主自愈 SRE 闭环矩阵 (MAPE-K)</div>
-        <div class="slide-act">Part V: 自愈闭环架构</div>
+        <div class="slide-title">7. Seven-Fold Autonomous Self-Healing SRE Closed Loops (MAPE-K)</div>
+        <div class="slide-act">Part V: Loop Architecture</div>
       </div>
       <div class="slide-body grid-3">
         <div class="card">
-          <div class="card-title">🤖 1. 结构自审与反思闭环</div>
-          <p>Pydantic 拦截大模型输出，校验失败自动组装 Reflection Error Prompt 二次反思推理（最多重试 3 次）。</p>
+          <div class="card-title">🤖 1. AI Format Self-Audit Loop</div>
+          <p>Pydantic intercepts Gemini output; validation failures assemble Reflection Error Prompt for re-reasoning (up to 3 retries).</p>
         </div>
         <div class="card">
-          <div class="card-title">⚡ 2. 状态机熔断降级闭环</div>
-          <p>FMP 出现故障时熔断器跳闸（CLOSED ➔ OPEN），无缝平滑回退至 yfinance 历史镜像与缓存。</p>
+          <div class="card-title">⚡ 2. API State Machine Circuit Breaker</div>
+          <p>FMP failures trip breaker (CLOSED ➔ OPEN), triggering seamless fallback to yfinance or Firestore cache.</p>
         </div>
         <div class="card">
-          <div class="card-title">🔍 3. 缓存缺失自填补闭环</div>
-          <p>Cloud Scheduler 定时扫描 Firestore 缺失缓存，在每周研报推送前自动触发预热任务（Prewarm）。</p>
+          <div class="card-title">🔍 3. Cache Miss Self-Fill Loop</div>
+          <p>Cloud Scheduler scans Firestore missing cache and executes Prewarm prior to report dispatch.</p>
         </div>
         <div class="card">
-          <div class="card-title">📊 4. 策略胜率演化闭环</div>
-          <p>扫描过去 30 天选股信号与 T+5 真实走势，实时计算盈亏比并标注 OPTIMAL / CRITICAL 评级。</p>
+          <div class="card-title">📊 4. Gems Win Rate Evolution Loop</div>
+          <p>Scans past 30-day stock signals vs T+5 actual prices, calculating profit factor and emitting OPTIMAL/CRITICAL ratings.</p>
         </div>
         <div class="card">
-          <div class="card-title">🚨 5. 异常告警反馈闭环</div>
-          <p>FastAPI 全局拦截异常直连 GCP Error Reporting，并在 Discord/企微自动发送带代码修复建议的告警。</p>
+          <div class="card-title">🚨 5. Unhandled SRE Feedback Loop</div>
+          <p>FastAPI error interception connects to GCP Error Reporting and dispatches Discord alerts with fix suggestions.</p>
         </div>
         <div class="card">
-          <div class="card-title">🛡️ 6. 失控字符清洗与限频闭环</div>
-          <p>自动清洗 Markdown 表格分隔符失控死循环，限制单次推送上限 5 个 Chunk 并加入 0.35 秒延迟规避微信频控拦截。</p>
+          <div class="card-title">🛡️ 6. Runaway Sanitizer & Rate-Pacing</div>
+          <p>Eliminates degenerate table delimiter loops and enforces 5-chunk caps with 0.35s sleep to prevent WeChat/Discord rate limits.</p>
         </div>
       </div>
     </div>
 
-    <!-- Slide 9: 熔断状态机与自愈拓扑 -->
+    <!-- Slide 9: Circuit Breaker & Loop Topology -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">8. 状态机熔断与自愈闭环拓扑</div>
-        <div class="slide-act">Part V: 自愈闭环架构</div>
+        <div class="slide-title">8. Circuit Breaker State Machine & Self-Healing Loop Topology</div>
+        <div class="slide-act">Part V: Loop Architecture</div>
       </div>
       <div class="slide-body">
         <div class="mermaid-box">
-          <div class="mermaid-zoom-hint">🔍 点击放大查看</div>
+          <div class="mermaid-zoom-hint">🔍 Click to Expand</div>
           <pre class="mermaid">
 sequenceDiagram
     autonumber
     participant CS as GCP Cloud Scheduler
-    participant BE as Cloud Run 后端服务
-    participant CB as 熔断器 (Circuit Breaker)
-    participant FMP as FMP 黄金行情源
+    participant BE as Cloud Run Backend
+    participant CB as Circuit Breaker
+    participant FMP as FMP Primary API
     participant Gemini as Gemini 2.5 Flash
-    participant Webhook as 企微与 Discord 机器人
+    participant Webhook as WeCom & Discord Webhooks
 
-    CS->>BE: 1. 触发盘前策略简报定时任务
-    BE->>CB: 2. 请求多源量化与宏观数据
-    alt FMP 数据源健康
-        CB->>FMP: 3a. 查询实时行情、均线与 FRED 宏观指标
-        FMP-->>CB: 4a. 返回校验后的可信数据
-    else FMP 连续失败 3 次 (跳闸为 OPEN)
-        CB-->>BE: 3b. 降级切换至 yfinance 与 Firestore 缓存
+    CS->>BE: 1. Trigger Pre-Market Briefing Job
+    BE->>CB: 2. Request Multi-Source Data
+    alt FMP Healthy
+        CB->>FMP: 3a. Query Quotes, Technicals & FRED Macro
+        FMP-->>CB: 4a. Return Verified Data
+    else FMP Fails 3x (Tripped to OPEN)
+        CB-->>BE: 3b. Fallback to yfinance / Firestore Cache
     end
-    BE->>Gemini: 5. 注入定向持仓上下文与严格防幻觉提示词
-    Gemini-->>BE: 6. 生成操作指令清晰的盘前策略
-    BE->>BE: 7. 失控字符自愈清洗与分块限频保护 (最多 5 块)
-    BE-->>Webhook: 8. 匀速推送 (0.35秒间隔) 至企微与 Discord 频道
+    BE->>Gemini: 5. Targeted Context Routing & Anti-Hallucination Prompt
+    Gemini-->>BE: 6. Generated Actionable Guidance
+    BE->>BE: 7. Runaway Cleaner & Chunk Capping (Max 5 chunks)
+    BE-->>Webhook: 8. Paced Delivery (0.35s delay) to WeCom & Discord
           </pre>
         </div>
       </div>
     </div>
 
-    <!-- Slide 10: 权威 Benchmark 与测试验证 -->
+    <!-- Slide 10: Verification & Benchmarks -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">9. 权威 Benchmark 与 22/22 全量测试验证</div>
-        <div class="slide-act">Part VI: 落地指标与验证</div>
+        <div class="slide-title">9. Authoritative Benchmarks & 22/22 Automated Test Verification</div>
+        <div class="slide-act">Part VI: Verification & Benchmarks</div>
       </div>
       <div class="slide-body">
         <div class="table-responsive">
           <table>
             <thead>
               <tr>
-                <th>核心性能 / 技术维度</th>
-                <th>实测指标 / 验证结果</th>
-                <th>架构实现方案与说明</th>
+                <th>Performance / Technical Metric</th>
+                <th>Measured Value / Result</th>
+                <th>Technical Implementation & Notes</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><b>首字生成延迟 (TTFT)</b></td>
+                <td><b>Time to First Token (TTFT)</b></td>
                 <td><b style="color: var(--accent-green);">< 450 ms</b></td>
-                <td>HTTP/2 流式传输 + FastAPI StreamingResponse 原生管道。</td>
+                <td>Real-time streaming via HTTP/2 + FastAPI StreamingResponse.</td>
               </tr>
               <tr>
-                <td><b>定向上下文路由节省 Token</b></td>
-                <td><b style="color: var(--accent-green);">> 80% Token 消耗降低</b></td>
-                <td>股票代码智能剪枝，单次股票问答从 2.8万 Token 压缩至 2500 Token，延迟从 12s 降至 1.8s。</td>
+                <td><b>Targeted Context Routing Token Savings</b></td>
+                <td><b style="color: var(--accent-green);">> 80% Token Reduction</b></td>
+                <td>Symbol regex prunes irrelevant portfolio reports; latency drops from 12s to 1.8s.</td>
               </tr>
               <tr>
-                <td><b>Serverless 容器冷启动</b></td>
+                <td><b>Serverless Cold Start</b></td>
                 <td><b style="color: var(--accent-cyan);">< 1.8 s</b></td>
-                <td>基于 Python 3.11-slim 精简容器镜像与客户端延迟惰性初始化。</td>
+                <td>Based on Python 3.11-slim with lazy loading client optimization.</td>
               </tr>
               <tr>
-                <td><b>基础闲置运营月成本</b></td>
-                <td><b style="color: var(--accent-purple);">$0 / 月</b></td>
-                <td>借助 Cloud Run <code>Scale to Zero</code> 无服务器按需弹性收缩机制。</td>
+                <td><b>Base Fixed Monthly Cost</b></td>
+                <td><b style="color: var(--accent-purple);">$0 / month</b></td>
+                <td>Cloud Run Scale to Zero mechanism, billing strictly for actual requests.</td>
               </tr>
               <tr>
-                <td><b>多租户与数据严谨性测试集</b></td>
-                <td><b style="color: var(--accent-green);">22/22 单元测试 100% 通过</b></td>
-                <td>覆盖 401/403 RBAC 隔离、Webhook 双端脱敏、FRED 数据清洗、传闻警告标识及推送分块。</td>
+                <td><b>Multi-Tenant & Data Rigor Test Suite</b></td>
+                <td><b style="color: var(--accent-green);">22/22 Unit Tests Passed (100%)</b></td>
+                <td>Verifies 401/403 RBAC, Webhook masking, quote sanitization, FRED parsing, and chunk delivery.</td>
               </tr>
             </tbody>
           </table>
@@ -767,28 +767,28 @@ sequenceDiagram
       </div>
     </div>
 
-    <!-- Slide 11: 跨领域扩展路线 -->
+    <!-- Slide 11: Cross-Domain Scaling Guide -->
     <div class="slide">
       <div class="slide-header">
-        <div class="slide-title">10. 通用 AI Agent 框架跨领域复制指南</div>
-        <div class="slide-act">Part VI: 跨领域扩展</div>
+        <div class="slide-title">10. Universal AI Agent Framework Cross-Domain Replication Guide</div>
+        <div class="slide-act">Part VI: Cross-Domain Scaling</div>
       </div>
       <div class="slide-body grid-2">
         <div class="card">
-          <div class="card-title">🌐 领域迁移范式 (Universal Domain Adaptation)</div>
+          <div class="card-title">🌐 Universal Domain Adaptation</div>
           <ul>
-            <li><b>金融科技 (FinTech)</b>：Neo4j 产业链图谱、OHLCV 技术看板、持仓风控（当前已全量上线）。</li>
-            <li><b>医疗健康 (MedTech)</b>：疾病-药物 Graph RAG 图谱、电子病历硬指标提取、AI 处方自审。</li>
-            <li><b>法律合规 (LegalTech)</b>：法例关联图谱、合同条款硬性对比、条款自纠错 Reflection。</li>
-            <li><b>企业级 RAG (Enterprise Search)</b>：企业组织架构图谱、知识库检索引导、多模态智能客服。</li>
+            <li><b>FinTech</b>: Neo4j supply chain graph, OHLCV technical dashboard, portfolio risk control (deployed in production).</li>
+            <li><b>MedTech</b>: Disease-Drug Graph RAG, EHR hard metric extraction, AI prescription self-audit.</li>
+            <li><b>LegalTech</b>: Statute & case law graph, contract clause hard comparison, clause self-correction reflection.</li>
+            <li><b>Enterprise Search</b>: Organizational chart graph, knowledge base retrieval guidance, multimodal AI customer support.</li>
           </ul>
         </div>
         <div class="card">
-          <div class="card-title">🚀 总结与未来演进</div>
+          <div class="card-title">🚀 Summary & Future Roadmap</div>
           <ul>
-            <li><b>一套架构，无限复用</b>：Graph RAG + Harness + Loop + Security 构成通用企业级 AI 基座。</li>
-            <li><b>Cloud Tasks 异步队列</b>：处理大规模并发推演。</li>
-            <li><b>Firebase Data Connect (PostgreSQL)</b>：扩展高频交易与因子数据库。</li>
+            <li><b>One Architecture, Infinite Reuse</b>: Graph RAG + Harness + Loop + Security forms universal enterprise AI base.</li>
+            <li><b>Cloud Tasks Async Queue</b>: Processing large-scale concurrent inference tasks.</li>
+            <li><b>Firebase Data Connect (PostgreSQL)</b>: Scaling high-frequency trading and factor database.</li>
           </ul>
         </div>
       </div>
@@ -797,9 +797,9 @@ sequenceDiagram
   </div>
 
   <div class="controls">
-    <button class="nav-btn" id="prev-btn">← 上一页</button>
+    <button class="nav-btn" id="prev-btn">← Previous</button>
     <div class="counter" id="slide-counter">1 / 11</div>
-    <button class="nav-btn" id="next-btn">下一页 →</button>
+    <button class="nav-btn" id="next-btn">Next →</button>
   </div>
 
   <script>
@@ -906,7 +906,7 @@ sequenceDiagram
     const modal = document.createElement('div');
     modal.className = 'mermaid-modal';
     modal.innerHTML = `
-      <button class="mermaid-modal-close">✕ 关闭全屏</button>
+      <button class="mermaid-modal-close">✕ Close Fullscreen</button>
       <div class="mermaid-modal-content"></div>
     `;
     document.body.appendChild(modal);
