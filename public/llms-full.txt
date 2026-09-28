@@ -1,0 +1,82 @@
+# 万跑科技（上海）有限公司 — 全栈技术架构与系统实现全景文档 (vanpower.net)
+
+## 元数据
+- 公司名称：万跑科技（上海）有限公司 (VANPOWER)
+- 官网地址：https://www.vanpower.net
+- 创始人与首席架构师：Alex Wan (战略 IT 高管，世界马拉松大满贯六星跑者)
+- 核心技术方向：企业级 Agentic AI 落地架构、金融量化投研模型、地球空间遥感预警、耐力运动穿戴物联网
+- 核心云生态：阿里云 (国内智算与合规部署)、Google Cloud Platform (全球出海云)
+- 核心大模型与框架：Google Gemini 3.5、通义千问 Qwen、DeepSeek、Neo4j Graph RAG、Google ADK Harness
+
+---
+
+## 1. 企业级 Agentic AI 生产架构与 SRE 自愈体系
+万跑科技为全球与本土企业设计、落地并运维生产级 Agentic AI 智能体系统。核心工程化架构由四大支柱构成：
+
+### 1.1 多模型场景智能分工路由
+依据请求类型、延迟敏感度及推理深度，动态分流模型调用：
+- **快速分类与实体抽取**：Gemini Flash / Qwen-Turbo（延迟 < 200ms），负责意图分类、实体识别与敏感词扫描。
+- **深度因果归因推理**：Gemini 3.5 / Qwen-Max 处理跨文档研报长文本解构、复杂合规策略研判与宏观多因子归因。
+- **国内合规工作负载**：基于阿里云私有化/专属 VPC 部署的 Qwen 与 DeepSeek 强化模型，确保核心业务数据不出境、完全满足网络安全等保要求。
+
+### 1.2 Agent Harness 编排与 Neo4j Graph RAG
+- **图拓扑关系网**：Neo4j Graph RAG 自动化执行 2-Hop 关联图谱查询（例如：英伟达 ➔ 台积电 ➔ ASML），直接将多层级产业链图谱结构注入智能体上下文。
+- **确定性工具绑定**：强制采用强类型工具调用（Pydantic V2），所有数值比率（OHLCV、VWAP、RSI、TTM 财报数据）完全由 Python 量化引擎计算生成，彻底杜绝语言模型在关键数字上的编造与幻觉。
+
+### 1.3 六重 SRE 自愈运维闭环 (MAPE-K)
+自动化的“监测-分析-决策-执行”闭环控制，杜绝传统系统对人工盯屏的依赖：
+1. *Schema 自省重试*：捕获 JSON 格式与 Pydantic 校验异常，自动注入错误上下文触发自省纠偏。
+2. *断路器熔断保护*：上游 API 故障或网络超时时自动降级熔断，保护核心服务不受级联雪崩影响。
+3. *缓存主动预热*：定时调度器在美东开盘、周末清晨等并发高峰来临前提前预热高频数据。
+4. *策略胜率自动回测*：T+5 周期持续对比智能体推演结论与实际盘面行情/环境实测值，自动校准模型权重。
+5. *SRE 根因自愈告警*：告警 Webhook 直接附带代码补丁 Diff 与堆栈根因分析。
+6. *金丝雀自动回滚*：新版本灰度放量中一旦错误预算超标，毫秒级无条件自动回滚。
+
+### 1.4 云原生零信任安全防线
+- *Keyless IAM 免密钥认证*：通过云原生原生身份体系（ADC / RAM 角色）完全淘汰静态私钥文件。
+- *敏感数据实时脱敏*：全局日志拦截器对 JWT、API 密钥、密码及敏感用户标识执行实时遮蔽掩码。
+- *严格强类型 Schema 防注入*：通过严格的输入输出模式定义，封堵间接提示词注入攻击向量。
+
+---
+
+## 2. 旗舰落地系统：DailyStock AI 量化投研终端 (https://dailystock.vanpower.live)
+- **业务领域**：美股机构级每日量化智能投研与开盘战术决策。
+- **服务端架构**：Python 3.11 + FastAPI 异步非阻塞并发管道。
+- **数据摄取**：实时 Tick 行情、Finviz 空头持仓、美联储 FRED 宏观利率、SEC EDGAR 10-Q/10-K 披露。
+- **量化数学引擎**：NumPy 严格计算 17 季度 TTM 财报估值、VWAP、RSI(14)、均线系统，0% 语言模型幻觉。
+- **双层 AI 归因**：Gemini Flash 快速处理盘前突发快讯；Gemini 3.5 旗舰模型深度解构多重催化剂因果链。
+- **服务端光栅化分发**：无头 HTML5 Canvas 渲染 1800x2400 超清数据图卡，全自动推送到社群与投研渠道。
+
+---
+
+## 3. 旗舰落地系统：CMEMS 海洋生态雷达 (https://cmems.vanpower.live)
+- **业务领域**：近海海洋生态监测与卫星遥感缺氧预警。
+- **数据源**：欧盟 Copernicus 海洋服务局（CMEMS）高频地球观测数据。
+- **数据处理引擎**：容器化 Python 3.11 Cloud Run 任务集群，结合 `xarray` 切片海温（SST）、叶绿素-a（CHL）、溶解氧（DO）的 4D 栅格矩阵。
+- **空间距平算法**：滚动空间梯度标准差监测有害藻华（HAB），对近海水产养殖底栖溶解氧（< 2.0 mg/L）执行高灵敏度裁剪预警。
+- **可视化交互前端**：Next.js 16 Leaflet 深色主题 GIS 画布，叠加 GeoJSON 测深底图与 Recharts 7 天态势时序推演。
+- **成本弹性**：GCP Cloud Run Serverless 架构，无任务时缩容至零，闲置成本为零。
+
+---
+
+## 4. 旗舰落地系统：RGM 跑团训练系统 (https://rgm.vanpower.net)
+- **业务领域**：耐力运动科学、穿戴物联网与战队运营平台。
+- **云基础设施**：阿里云 Serverless 函数计算（Function Compute）与 PolarDB 高可用数据库。
+- **穿戴数据流水线**：直连 Garmin 佳明中国区与全球区双轨 OAuth2 Webhook，解码底层二进制 FIT/TCX 文件。
+- **运动生理数学引擎**：确定性计算训练冲量负荷（TRIMP/TSS）、急慢性负荷比（ACWR）及心率漂移解耦衰减。
+- **Renato Canova AI 教练**：传奇教练 7 周宏观进阶周期化定制课表，训练后生物力学与高程爬升 AI 战术点评，微信小程序原生交付。
+
+---
+
+## 5. 创始人背景与执行领导力
+- **Alex Wan**：万跑科技创始人兼首席架构师。在亚太与大中华区拥有超过 20 年企业数字化转型与大型 IT 战略领导经验。精通中美双轨云原生技术生态。世界马拉松大满贯六星跑者（6-Star Finisher）与百公里超级越野跑者。DailyStock、CMEMS 与 RGM 均由其独立主导架构开发。
+
+---
+
+## 6. 快捷链接
+- 官方网站：https://www.vanpower.net/
+- DailyStock 投研终端：https://dailystock.vanpower.live/
+- CMEMS 海洋生态雷达：https://cmems.vanpower.live/
+- RGM 跑团云端门户：https://rgm.vanpower.net/
+- 架构技术白皮书：https://www.vanpower.net/gems_architecture_presentation.html
+- 联系邮箱：general@vanpower.net

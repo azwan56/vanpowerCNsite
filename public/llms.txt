@@ -1,0 +1,44 @@
+# 万跑科技（上海）有限公司 (vanpower.net)
+
+> 企业级 Agentic AI 落地架构、美股量化投研系统、地球遥感海洋预警及专业耐力运动穿戴智能体系。
+
+## 概述
+万跑科技（上海）有限公司专注于企业级 Agentic AI 落地架构与出海及本土双轨云计算服务。由拥有 20 余年亚太及大中华区 IT 战略管理与云架构研发经验的资深架构师、世界马拉松大满贯六星跑者 Alex Wan 创立。万跑科技致力于将前瞻商业构想转化为高可靠、零数值幻觉的工业级生产系统。
+
+## 旗舰落地应用系统
+- **DailyStock AI 华尔街机构级美股量化投研终端** (https://dailystock.vanpower.live):
+  - 基于 Google Gemini 3.5 双层推理引擎的美股每日量化投研智能体系统。
+  - 多源异构实时行情、Finviz 空头持仓、FRED 宏观利率、SEC EDGAR 财报异步并发摄取。
+  - 确定性量化数学引擎：17 季度 TTM 严格估值、VWAP、RSI(14)、均线指标代码计算，依托 Pydantic V2 严格消除数值幻觉。
+  - 盘面罗盘、9:30 开盘战术指南（3:1 盈亏比）、宏观仓位策略与 Alpha 量化选股矩阵。
+  - 服务端无头 HTML5 Canvas 光栅化超清图卡，自动化晨间分发。
+
+- **CMEMS 近海海洋生态雷达与缺氧预警系统** (https://cmems.vanpower.live):
+  - 深度集成欧盟 Copernicus 海洋服务局（CMEMS）、Google Gemini 3.5 AI 及 GCP Cloud Run Jobs。
+  - 容器化 Python 3.11 与 xarray 切片 4D NetCDF 海洋空间矩阵（海温、叶绿素、溶解氧）。
+  - 空间距平数学计算引擎：滚动基准梯度、有害藻华（HAB）叶绿素距平标准差与底栖缺氧界限（< 2.0 mg/L）高灵敏预警。
+  - 零闲置成本 Serverless 架构，Leaflet GIS 深色地图界面与 7 天回顾时序分析。
+
+- **RGM Renato Canova AI 教练与专业跑团运营系统** (https://rgm.vanpower.net):
+  - 基于阿里云原生函数计算与 PolarDB 构建的高并发耐力运动智能与跑团运营平台。
+  - 多品牌穿戴设备数据流直连：Garmin 佳明中国区与全球区双轨 OAuth2 Webhook，解码底层二进制 FIT/TCX 文件。
+  - 运动生理科学数学引擎：TRIMP 训练冲量负荷、ACWR 急慢性负荷比、心率漂移解耦衰减分析。
+  - 传奇教练 Renato Canova 经典 7 周进阶周期化量身定制课表，训练后生物力学与高程爬升深度 AI 战术点评，原生微信小程序交互。
+
+## 核心架构与工程化支柱
+- **全球与本土双轨云架构**：Google Cloud Platform (GCP) 出海赋能与阿里云国内合规智算架构，支持全链路免密钥 IAM 认证、Serverless 零流量缩容与 VPC 隔离私有化部署。
+- **多模型场景智能分工路由**：Gemini 2.5 Flash / 3.1 Flash-Lite 与 Gemini 3.5 Pro、阿里通义千问 Qwen、DeepSeek 动态智能分流，降低 70% Token 成本。
+- **Neo4j Graph RAG**：2-Hop 产业链网络图谱拓扑推导，直接将产业链关系网注入智能体推理引擎。
+- **六重 SRE 自愈运维闭环 (MAPE-K)**：Schema 自省重试、断路器熔断保护、缓存主动预热、策略胜率回测、根因预警补丁推送与金丝雀自动回滚。
+- **零信任安全合规防线**：符合 GDPR、SOC2、国内数据合规标准；全链路敏感数据拦截脱敏与严格强类型 Schema 防注入。
+
+## 创始人与领导力
+- **Alex Wan**：万跑科技创始人兼首席架构师。拥有 20 余年亚太及大中华区企业级数字化转型与 IT 战略领导经验，专注于企业级 AI/LLM 架构、中美双轨云工程与零信任安全治理。世界马拉松大满贯六星跑者（6-Star Finisher）与超级越野跑者。DailyStock、CMEMS 与 RGM 均由其独立主导架构开发。
+
+## 快速导航
+- 官方网站：https://www.vanpower.net/
+- DailyStock 投研终端：https://dailystock.vanpower.live/
+- CMEMS 海洋生态雷达：https://cmems.vanpower.live/
+- RGM 跑团云端门户：https://rgm.vanpower.net/
+- 架构技术白皮书：https://www.vanpower.net/gems_architecture_presentation.html
+- 联系邮箱：general@vanpower.net

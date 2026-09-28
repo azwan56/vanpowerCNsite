@@ -1,7 +1,118 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   h1, h2, h3, h4, h5, h6, p {
     text-wrap: balance;
   }
+}
+
+/* Futuristic Tech Grid & Animations */
+.bg-tech-grid {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+}
+
+.bg-dark-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.mask-radial-fade {
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 100%);
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-0.8deg);
+  }
+}
+
+@keyframes pulse-slow-glow {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes border-glow-flow {
+  0%, 100% {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+  }
+  50% {
+    border-color: rgba(6, 182, 212, 0.6);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.25);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+.animate-pulse-slow-glow {
+  animation: pulse-slow-glow 5s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease infinite;
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep 4s linear infinite;
+  transform-origin: center;
+}
+
+.animate-border-flow {
+  animation: border-glow-flow 4s ease-in-out infinite;
 }
