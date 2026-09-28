@@ -562,8 +562,8 @@ export default function HomePage() {
                         <h3 className="text-lg font-bold text-white">DailyStock AI</h3>
                       </div>
                     </div>
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                      在线终端
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                      境外 GCP 部署
                     </span>
                   </div>
 
@@ -588,11 +588,14 @@ export default function HomePage() {
                       华尔街机构级美股量化投研终端
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
-                      基于 Google Gemini 3.5 双层推理引擎的美股每日智能投研系统。端到端自动化整合盘前催化剂归因、多因子量化估值及美东 9:30 开盘战术指南。
+                      基于 Google Gemini 3.5 双层推理引擎的美股每日智能投研系统。全套服务部署于境外 Google Cloud 平台（国内访问可能存在网络延迟或需网络加速），端到端自动化整合盘前催化剂归因、17 季度 TTM 严格估值及开盘战术指南。
                     </p>
 
                     {/* 指标标签 */}
                     <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-2.5 py-1 bg-amber-950/40 text-amber-300 text-xs rounded-lg font-mono border border-amber-500/30">
+                        境外 GCP 部署
+                      </span>
                       <span className="px-2.5 py-1 bg-slate-800 text-indigo-300 text-xs rounded-lg font-mono">
                         91% 高确信度推演
                       </span>
@@ -646,8 +649,8 @@ export default function HomePage() {
                         <h3 className="text-lg font-bold text-white">CMEMS 海洋生态雷达</h3>
                       </div>
                     </div>
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-                      在线雷达
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                      境外 GCP 部署
                     </span>
                   </div>
 
@@ -672,11 +675,14 @@ export default function HomePage() {
                       近海海洋生态监测与缺氧预警系统
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
-                      深度集成欧盟 Copernicus 海洋服务局（CMEMS）、Google Gemini 3.5 AI 及 GCP Cloud Run Jobs。全自动切片 4D NetCDF 栅格数据，实时预警近海缺氧与赤潮灾害。
+                      深度集成欧盟 Copernicus 卫星中心，服务端与 4D NetCDF 算力全面部署于境外 Google Cloud 平台（国内访问可能存在网络延迟或需网络加速）。全自动切片海洋遥感数据，实时预警近海缺氧与赤潮灾害。
                     </p>
 
                     {/* 指标标签 */}
                     <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-2.5 py-1 bg-amber-950/40 text-amber-300 text-xs rounded-lg font-mono border border-amber-500/30">
+                        境外 GCP 部署
+                      </span>
                       <span className="px-2.5 py-1 bg-slate-800 text-cyan-300 text-xs rounded-lg font-mono">
                         NetCDF4 4D 栅格切片
                       </span>
@@ -730,8 +736,8 @@ export default function HomePage() {
                         <h3 className="text-lg font-bold text-white">RGM 跑团训练系统</h3>
                       </div>
                     </div>
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                      在线平台
+                    <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
+                      国内阿里云 · 极速流畅
                     </span>
                   </div>
 
@@ -756,11 +762,14 @@ export default function HomePage() {
                       Canova 周期化训练与赛后 AI 战术点评系统
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
-                      基于传奇教练 Renato Canova 周期化哲学的运动科学操作系统。直连 Garmin 与高驰穿戴数据流，生成个性化阶段训练方案与课后生物力学智能复盘。
+                      基于传奇教练 Renato Canova 周期化哲学的运动科学操作系统。<strong>全部微服务与数据流部署于中国大陆境内的阿里云平台</strong>，直连国内 BGP 网络与微信生态，提供秒级极速响应与丝滑流畅体验。
                     </p>
 
                     {/* 指标标签 */}
                     <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-2.5 py-1 bg-emerald-950/40 text-emerald-300 text-xs rounded-lg font-mono border border-emerald-500/40 font-bold">
+                        国内阿里云 100% 流畅
+                      </span>
                       <span className="px-2.5 py-1 bg-slate-800 text-purple-300 text-xs rounded-lg font-mono">
                         Canova 7 周进阶周期化
                       </span>

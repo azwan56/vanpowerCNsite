@@ -21,7 +21,8 @@ import {
   Compass,
   Sprout,
   Flame,
-  Factory
+  Factory,
+  Globe
 } from 'lucide-react';
 import WhitePaperModal from '../components/WhitePaperModal';
 
@@ -140,6 +141,31 @@ export default function CmemsPage() {
               <Presentation className="w-4 h-4 mr-2 text-cyan-400" />
               <span>查看系统架构白皮书</span>
             </button>
+          </div>
+        </div>
+
+        {/* 境外云部署访问网络提示 Notice */}
+        <div className="max-w-6xl mx-auto mb-10 p-5 rounded-2xl bg-cyan-950/40 border border-cyan-500/40 text-cyan-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg backdrop-blur-md">
+          <div className="flex items-start space-x-3.5 min-w-0">
+            <div className="p-2.5 rounded-xl bg-cyan-500/20 text-cyan-400 shrink-0 mt-0.5 sm:mt-0">
+              <Globe className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="font-bold text-cyan-300 text-sm flex items-center gap-2 mb-1">
+                <span>🌐 基础设施部署与国内网络访问说明</span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/40">
+                  境外 Google Cloud & 欧盟 Copernicus
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                CMEMS 海洋生态雷达直连<strong>欧盟 Copernicus 卫星中心，服务端与 4D NetCDF 算力管线全面部署于境外 Google Cloud Platform (GCP) 平台</strong>。从中国大陆境内直连可能会受跨境网络链路影响，出现<strong>无法访问或遥感切片加载缓慢</strong>的情况。建议在具备国际互联网连通性的网络环境下体验在线实时雷达。
+              </p>
+            </div>
+          </div>
+          <div className="shrink-0 pl-12 sm:pl-0">
+            <span className="text-xs font-mono px-3 py-1.5 rounded-xl bg-slate-900/80 text-cyan-400 border border-cyan-500/30 inline-block whitespace-nowrap">
+              境外云服务 · 跨境需网络加速
+            </span>
           </div>
         </div>
 

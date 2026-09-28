@@ -18,7 +18,8 @@ import {
   Cloud,
   Compass,
   Users,
-  ShieldCheck
+  ShieldCheck,
+  Server
 } from 'lucide-react';
 import WhitePaperModal from '../components/WhitePaperModal';
 
@@ -137,6 +138,31 @@ export default function RgmPage() {
               <Presentation className="w-4 h-4 mr-2 text-emerald-400" />
               <span>查看系统架构白皮书</span>
             </button>
+          </div>
+        </div>
+
+        {/* 国内云原生部署与极速流畅访问保障 Banner */}
+        <div className="max-w-6xl mx-auto mb-10 p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg backdrop-blur-md">
+          <div className="flex items-start space-x-3.5 min-w-0">
+            <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5 sm:mt-0">
+              <Server className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="font-bold text-emerald-300 text-sm flex items-center gap-2 mb-1">
+                <span>🚀 100% 国内全栈云原生部署 · 全国流畅极速访问</span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/40">
+                  阿里云国内节点 · 微信原生生态
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                与境外部署系统不同，RGM 跑团训练系统与 Canova AI 教练的<strong>全部底层算力、穿戴 IoT 管道与数据库均部署于中国大陆境内的阿里云（Alibaba Cloud）平台</strong>。直连国内高防多线 BGP 网络与 CDN 节点，深度适配微信小程序与佳明中国区服务器，<strong>无需任何特殊网络，全国各地均可直接享受秒级加载与丝滑流畅的交互体验</strong>。
+              </p>
+            </div>
+          </div>
+          <div className="shrink-0 pl-12 sm:pl-0">
+            <span className="text-xs font-mono px-3 py-1.5 rounded-xl bg-slate-900/80 text-emerald-400 border border-emerald-500/30 inline-block whitespace-nowrap">
+              国内云原生 · 极速免翻墙
+            </span>
           </div>
         </div>
 
