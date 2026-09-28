@@ -31,6 +31,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import WhitePaperModal from '../components/WhitePaperModal';
+import HeroConsole from '../components/HeroConsole';
 
 export default function HomePage() {
   const [market, setMarket] = useState<'global' | 'enterprise'>('global');
@@ -389,76 +390,51 @@ export default function HomePage() {
 
       <main>
         {/* Hero 视觉区与交互式背景 */}
-        <section id="home" className="pt-16 pb-24 md:pt-24 md:pb-32 relative overflow-hidden bg-slate-50/50">
+        <section id="home" className="pt-8 pb-16 md:pt-12 md:pb-24 relative overflow-hidden bg-slate-50/70 border-b border-gray-100">
           <HeroCanvas />
 
-          <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            {/* 实时生产遥测流轮播指示器 */}
-            <div className="inline-flex items-center justify-center max-w-3xl mx-auto mb-8 w-full">
-              <div className="w-full p-2.5 sm:p-3 bg-white/85 backdrop-blur-md rounded-2xl border border-gray-200/80 shadow-md flex items-center justify-between space-x-3 text-left transition-all">
-                <div className="flex items-center space-x-3 min-w-0">
-                  <div className="flex items-center space-x-1.5 shrink-0 pl-1">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                    </span>
-                    <span className="text-[11px] font-mono font-bold text-gray-500 uppercase tracking-wider hidden sm:inline">
-                      实时生产集群
-                    </span>
-                  </div>
+          {/* 细腻高科技网格纹理与环境光晕 */}
+          <div className="absolute inset-0 bg-tech-grid mask-radial-fade opacity-50 pointer-events-none"></div>
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-indigo-200/40 via-cyan-100/30 to-purple-200/30 blur-3xl rounded-full -z-10 pointer-events-none"></div>
 
-                  <div className="h-4 w-px bg-gray-200 shrink-0"></div>
-
-                  <div className="min-w-0">
-                    <div className="flex items-center space-x-2">
-                      <span className={`text-[10px] font-mono font-extrabold px-2 py-0.5 rounded-md border ${telemetryStreams[activeTelemetryIndex].color}`}>
-                        {telemetryStreams[activeTelemetryIndex].badge}
-                      </span>
-                      <span className="text-xs font-bold text-gray-800 truncate">
-                        {telemetryStreams[activeTelemetryIndex].title}
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-gray-500 truncate mt-0.5">
-                      {telemetryStreams[activeTelemetryIndex].text}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-1 shrink-0 pr-1">
-                  {telemetryStreams.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveTelemetryIndex(idx)}
-                      className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                        idx === activeTelemetryIndex ? 'bg-indigo-600 w-5' : 'bg-gray-300 hover:bg-gray-400'
-                      }`}
-                      aria-label={`切换到遥测流 ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            {/* 顶端实时生产状态胶囊徽章（单行统一设计） */}
+            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-indigo-100/80 shadow-sm backdrop-blur-md mb-5 hover:border-indigo-200 transition-colors">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[10.5px] font-mono font-bold text-emerald-600 uppercase tracking-wider hidden sm:inline">
+                生产双轨集群在线
+              </span>
+              <span className="h-3 w-px bg-gray-200 hidden sm:inline"></span>
+              <span className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded border ${telemetryStreams[activeTelemetryIndex].color}`}>
+                {telemetryStreams[activeTelemetryIndex].badge}
+              </span>
+              <span className="text-xs font-semibold text-gray-700 truncate max-w-[220px] sm:max-w-none">
+                {telemetryStreams[activeTelemetryIndex].title}
+              </span>
+              <span className="h-3 w-px bg-gray-200 hidden md:inline"></span>
+              <span className="text-[11px] text-gray-400 hidden md:inline font-mono">
+                {telemetryStreams[activeTelemetryIndex].text.split('·')[0]}
+              </span>
             </div>
 
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold mb-8">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>企业级 Agentic AI 落地系统 · 全球双轨出海与本土混合云</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-gray-900">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 leading-[1.14] text-gray-900">
               全栈企业级 Agentic AI <br className="hidden sm:inline" />
               <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
                 专为核心关键业务生产落地打造
               </span>
             </h1>
 
-            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed font-normal">
               万跑科技提供高并发、零幻觉的智能体系统、确定性 RAG 算力流及自愈运维云架构，深度整合 Google Gemini、通义千问 Qwen 与 DeepSeek，保障 7x24 持续可靠运行。
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-6">
               <a
                 href="#projects"
-                className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-lg shadow-indigo-600/25 transition duration-300 flex items-center justify-center space-x-2 group cursor-pointer"
+                className="w-full sm:w-auto px-7 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-lg shadow-indigo-600/25 transition duration-300 flex items-center justify-center space-x-2 group cursor-pointer text-sm"
               >
                 <span>探索旗舰落地项目</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -466,62 +442,67 @@ export default function HomePage() {
 
               <button
                 onClick={() => setShowPresentationModal(true)}
-                className="w-full sm:w-auto px-8 py-4 bg-white/90 hover:bg-white text-gray-800 font-bold rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-center space-x-2 cursor-pointer"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-gray-50 text-gray-800 font-bold rounded-2xl border border-gray-200/90 shadow-sm hover:shadow transition duration-300 flex items-center justify-center space-x-2 cursor-pointer text-sm"
               >
                 <Presentation className="w-4 h-4 text-indigo-600" />
                 <span>技术架构白皮书</span>
               </button>
             </div>
 
-            {/* 快速生产指标看板 */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16 text-left">
-              <div className="p-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm">
-                <div className="text-2xl font-black text-indigo-600 mb-0.5">99.99%</div>
-                <div className="text-xs font-bold text-gray-700">SRE 自愈可用性</div>
-                <div className="text-[11px] text-gray-500 mt-0.5">MAPE-K 自动化闭环</div>
-              </div>
-              <div className="p-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm">
-                <div className="text-2xl font-black text-cyan-600 mb-0.5">&lt; 450 ms</div>
-                <div className="text-xs font-bold text-gray-700">首字响应延迟 (TTFT)</div>
-                <div className="text-[11px] text-gray-500 mt-0.5">HTTP/2 流式流转管道</div>
-              </div>
-              <div className="p-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm">
-                <div className="text-2xl font-black text-emerald-600 mb-0.5">0%</div>
-                <div className="text-xs font-bold text-gray-700">数值逻辑幻觉率</div>
-                <div className="text-[11px] text-gray-500 mt-0.5">Pydantic V2 严格约束</div>
-              </div>
-              <div className="p-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm">
-                <div className="text-2xl font-black text-purple-600 mb-0.5">双轨多云</div>
-                <div className="text-xs font-bold text-gray-700">出海与国内合规 VPC</div>
-                <div className="text-[11px] text-gray-500 mt-0.5">GCP + 阿里云双轨接入</div>
-              </div>
-            </div>
+            {/* ======================================================== */}
+            {/* 核心视觉中心：企业级智能体生产控制台中枢 (Hero Centerpiece) */}
+            {/* ======================================================== */}
+            <HeroConsole
+              market={market}
+              onMarketChange={setMarket}
+              onOpenWhitepaper={() => setShowPresentationModal(true)}
+            />
 
-            {/* 架构焦点切换器 */}
-            <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 p-2 bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm max-w-xl mx-auto">
-              <button 
-                onClick={() => setMarket('global')}
-                className={`w-full sm:w-auto px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer flex items-center justify-center space-x-2 ${
-                  market === 'global' 
-                    ? `bg-indigo-600 text-white shadow-md` 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                <Globe className="w-4 h-4" />
-                <span>🌍 全球出海云 AI (GCP + Gemini)</span>
-              </button>
+            {/* 快速生产指标看板 - 紧密集成于视觉中心下方 */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 max-w-6xl mx-auto mt-6 text-left">
+              <div className="p-4 sm:p-5 bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="text-2xl sm:text-3xl font-black text-indigo-600 font-mono">99.99%</div>
+                  <div className="p-1.5 rounded-lg bg-indigo-50 text-indigo-600">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="text-xs sm:text-sm font-bold text-gray-800">SRE 自愈可用性</div>
+                <div className="text-[11px] text-gray-500 mt-0.5 font-mono">MAPE-K 自动化闭环</div>
+              </div>
 
-              <button 
-                onClick={() => setMarket('enterprise')}
-                className={`w-full sm:w-auto px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer flex items-center justify-center space-x-2 ${
-                  market === 'enterprise' 
-                    ? `bg-emerald-600 text-white shadow-md` 
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                <Server className="w-4 h-4" />
-                <span>🏢 本土专属智算 (阿里云 + Qwen/私有化)</span>
-              </button>
+              <div className="p-4 sm:p-5 bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="text-2xl sm:text-3xl font-black text-cyan-600 font-mono">&lt; 450 ms</div>
+                  <div className="p-1.5 rounded-lg bg-cyan-50 text-cyan-600">
+                    <Cpu className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="text-xs sm:text-sm font-bold text-gray-800">首字响应延迟 (TTFT)</div>
+                <div className="text-[11px] text-gray-500 mt-0.5 font-mono">HTTP/2 流式流转管道</div>
+              </div>
+
+              <div className="p-4 sm:p-5 bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="text-2xl sm:text-3xl font-black text-emerald-600 font-mono">0%</div>
+                  <div className="p-1.5 rounded-lg bg-emerald-50 text-emerald-600">
+                    <CheckCircle2 className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="text-xs sm:text-sm font-bold text-gray-800">数值逻辑幻觉率</div>
+                <div className="text-[11px] text-gray-500 mt-0.5 font-mono">Pydantic V2 严格契约</div>
+              </div>
+
+              <div className="p-4 sm:p-5 bg-white/90 backdrop-blur-md rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="text-2xl sm:text-3xl font-black text-purple-600 font-mono">双轨多云</div>
+                  <div className="p-1.5 rounded-lg bg-purple-50 text-purple-600">
+                    <Globe className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="text-xs sm:text-sm font-bold text-gray-800">出海与国内合规 VPC</div>
+                <div className="text-[11px] text-gray-500 mt-0.5 font-mono">GCP + 阿里云双轨接入</div>
+              </div>
             </div>
           </div>
         </section>
