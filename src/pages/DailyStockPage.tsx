@@ -86,6 +86,15 @@ export default function DailyStockPage() {
               <span>技术白皮书</span>
             </button>
             <a
+              href="/vault/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-400 hover:text-emerald-300 border border-emerald-500/30 text-xs font-semibold transition-all shadow-sm"
+            >
+              <span>📚 投研文档库</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+            <a
               href="https://dailystock.vanpower.live"
               target="_blank"
               rel="noopener noreferrer"

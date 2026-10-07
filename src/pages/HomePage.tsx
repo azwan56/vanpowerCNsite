@@ -611,6 +611,13 @@ export default function HomePage() {
                     <span>体验终端</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
+                  <a
+                    href="/vault/"
+                    className="inline-flex items-center justify-center space-x-1.5 px-4 py-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 hover:text-emerald-300 text-xs font-semibold border border-emerald-500/30 transition-colors"
+                  >
+                    <span>📚 投研文档库</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
 
@@ -1573,6 +1580,10 @@ export default function HomePage() {
             <Link to="/projects/dailystock" className="hover:text-white transition-colors">
               DailyStock AI 量化案例
             </Link>
+            <span className="text-gray-700">·</span>
+            <a href="/vault/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium">
+              📚 投研文档库
+            </a>
             <span className="text-gray-700">·</span>
             <Link to="/projects/cmems" className="hover:text-white transition-colors">
               CMEMS 海洋生态雷达案例
