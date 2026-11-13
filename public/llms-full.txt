@@ -79,4 +79,5 @@
 - CMEMS 海洋生态雷达：https://cmems.vanpower.live/
 - RGM 跑团云端门户：https://rgm.vanpower.net/
 - 架构技术白皮书：https://www.vanpower.net/gems_architecture_presentation.html
+- Palantir Foundry Ontology 学习工作台 & 离线文档库：https://www.vanpower.net/ontology/ （含 390 篇官方 Markdown 文档、1,344 张架构原图、数字孪生交互沙盒与 6 阶段实战路线）
 - 联系邮箱：general@vanpower.net

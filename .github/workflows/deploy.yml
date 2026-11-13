@@ -4,32 +4,49 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 拉取代码
+      # 1. 拉取主站代码
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. 设置 Node.js 环境
+      # 2. 拉取 palantir-doc 独立仓库
+      - name: Checkout palantir-doc repository
+        env:
+          PALANTIR_DOC_TOKEN: ${{ secrets.PALANTIR_DOC_TOKEN }}
+        run: |
+          if [ -n "$PALANTIR_DOC_TOKEN" ]; then
+            git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$PALANTIR_DOC_TOKEN" | base64 -w0)" \
+              clone --depth 1 https://github.com/azwan56/palantir-doc.git _palantir-doc
+          else
+            if ! GIT_TERMINAL_PROMPT=0 git clone --depth 1 https://github.com/azwan56/palantir-doc.git _palantir-doc; then
+              echo "::error::Failed to clone azwan56/palantir-doc. If the repository is private, add a PALANTIR_DOC_TOKEN secret (PAT with Contents: Read on azwan56/palantir-doc) in vanpowerCNsite Settings -> Secrets and variables -> Actions, or set azwan56/palantir-doc visibility to Public."
+              exit 1
+            fi
+          fi
+
+      # 3. 设置 Node.js 环境（Vite 8 需要 Node >= 20.19 或 >= 22.12）
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
-      # 3. 安装依赖并打包静态资源
+      # 4. 安装依赖并打包主站与 /ontology/ 子应用
       - name: Install dependencies and build
         run: |
           npm ci
           npm run build
+          PALANTIR_DOC_REQUIRED=1 npm run build:palantir
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
-      # 4. 使用原生 SSH & Rsync 增量同步部署到阿里云 ECS
+      # 5. 使用原生 SSH & Rsync 增量同步部署到阿里云 ECS
       - name: Deploy to ECS via Rsync
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

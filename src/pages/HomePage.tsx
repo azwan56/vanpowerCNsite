@@ -28,7 +28,8 @@ import {
   Trophy,
   Lock,
   HelpCircle,
-  ChevronDown
+  ChevronDown,
+  BookOpen
 } from 'lucide-react';
 import WhitePaperModal from '../components/WhitePaperModal';
 import HeroConsole from '../components/HeroConsole';
@@ -912,6 +913,59 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* Palantir Foundry Ontology 知识库与学习工作台横幅 */}
+            <article className="mt-8 bg-gradient-to-r from-slate-950 via-sky-950/90 to-slate-900 rounded-3xl p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden border border-sky-500/25">
+              <div className="absolute -right-10 -top-10 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+              <div className="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-8">
+                  <div className="inline-flex items-center space-x-2 px-3 py-1 bg-sky-500/20 text-sky-300 rounded-full text-xs font-semibold mb-4 border border-sky-500/30">
+                    <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span>企业知识库 · Palantir Foundry Ontology</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold mb-4 text-white tracking-tight">
+                    Palantir Foundry Ontology 中文学习工作台 &amp; 390 篇离线文档库
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                    系统化整理 Palantir Foundry Ontology 语义建模、Action 决策执行、Functions 逻辑推理与 OSv2 底层架构。集成 4 组数字孪生交互沙盒、6 阶段实战精通路线、应用选型矩阵与全量 390 篇官方原文及 1,344 张高清架构配图。
+                  </p>
+                  <ul role="list" className="grid sm:grid-cols-2 gap-3 text-sm text-slate-300 list-none p-0 m-0">
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" aria-hidden="true" />
+                      <span>Data + Logic + Action + Security 四大支柱沙盒</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" aria-hidden="true" />
+                      <span>6 阶段 15 节精通路线与 8 道情景通关自测</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" aria-hidden="true" />
+                      <span>Workshop / Vertex / Map / Machinery 选型与反模式避坑</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" aria-hidden="true" />
+                      <span>390 篇官方 Markdown · 1,344 张原图 · ⌘K 双语速查</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="lg:col-span-4 flex flex-col gap-3 justify-center">
+                  <a
+                    href="/ontology/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[48px] items-center justify-center px-6 py-3.5 bg-gradient-to-r from-sky-400 to-cyan-400 hover:from-sky-300 hover:to-cyan-300 text-slate-950 font-bold rounded-2xl transition duration-300 shadow-lg shadow-sky-500/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300 group"
+                  >
+                    <BookOpen className="w-5 h-5 mr-2.5 shrink-0" aria-hidden="true" />
+                    <span>Palantir Ontology 学习工作台</span>
+                    <ExternalLink className="w-4 h-4 ml-2 shrink-0 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                  </a>
+                  <p className="text-xs text-slate-400 text-center font-mono">
+                    www.vanpower.net/ontology/
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -1595,6 +1649,10 @@ export default function HomePage() {
             <span className="text-gray-700">·</span>
             <a href="/gems_architecture_presentation.html" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               架构白皮书
+            </a>
+            <span className="text-gray-700" aria-hidden="true">·</span>
+            <a href="/ontology/" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:text-sky-300 transition-colors font-medium">
+              Palantir Ontology 学习工作台
             </a>
             <span className="text-gray-700">·</span>
             <a href="#faq" className="hover:text-white transition-colors">
